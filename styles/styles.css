@@ -48,6 +48,7 @@ body {
     text-decoration: none;
     color: var(--texto);
     padding: 10px 20px;
+    text-transform: uppercase;
 }
 
 .lista a:hover {
@@ -85,6 +86,75 @@ body {
     margin-right: 10px;
 }
 
+.sesion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    padding: 50px 300px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.formulario .formulario-input {
+    padding: 8px 0;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: none;
+}
+
+.formulario .login {
+    background-color: var(--botones-color);
+    border-radius: 10px;
+    text-transform: uppercase;
+    color: var(--texto);
+
+}
+
+.formulario .login:hover {
+    background-color: var(--fondo);
+    border: 2px solid var(--botones-color);
+
+}
+
+.formulario a {
+    text-decoration: none;
+    color: var(--texto);
+
+}
+
+.formulario a:hover {
+    border-bottom: 2px solid var(--botones-color);
+}
+
+.registrar h2 {
+    padding-bottom: 30px;
+    text-decoration: none;
+    color: var(--texto);
+
+}
+
+.registrar a {
+    text-decoration: none;
+    color: var(--texto);
+    padding: 20px;
+    background-color: var(--botones-color);
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+.registrar a:hover {
+    background-color: var(--fondo);
+    border: 2px solid var(--botones-color);
+
+}
+
+/***************login************/
+
+
 /* header {
     background-image: url(/img/jurassicpark.webp);
     background-size: 100%;
@@ -92,7 +162,7 @@ body {
 
 } */
 .banner {
-    height: 110dvh;
+    height: 50dvh;
 }
 
 /**********************Footer*****************/
