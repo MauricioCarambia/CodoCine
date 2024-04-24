@@ -53,7 +53,6 @@ body {
 
 .lista a:hover {
     border-bottom: 2px solid var(--botones-color);
-    font-weight: 700;
 }
 
 .navLogin {
@@ -187,8 +186,9 @@ body {
 .slide-inner {
     position: relative;
     overflow: hidden;
-    width: 100%;
+    width: 80%;
     height: 500px;
+    margin: auto;
 }
 
 .slide-open:checked+.slide-item {
@@ -295,6 +295,174 @@ body {
     z-index: 9999;
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33),
         -1px 0px 2px rgba(255, 255, 255, 0);
+}
+
+.btncomprar {
+    background-color: var(--botones-color);
+    padding: 10px 20px;
+    color: var(--texto);
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.btncomprar:hover {
+    background-color: var(--fondo);
+    border: 2px solid var(--botones-color);
+
+}
+
+.slide-indicador a {
+    text-decoration: none;
+}
+
+.busqueda {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.form-busqueda .form-label {
+    padding: 20px;
+    font-size: 1.5rem;
+}
+
+.form-busqueda .form-input {
+    padding: 10px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    width: 600px;
+}
+
+.form-busqueda .form-input.btnbuscar {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    background-color: var(--botones-color);
+    color: var(--texto);
+    border: none;
+    width: 200px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-left: 20px;
+
+}
+
+.form-busqueda .form-input.btnbuscar:hover {
+    border: 2px solid var(--botones-color);
+    background-color: var(--fondo);
+    color: var(--texto);
+}
+
+/***********************estrenos***********************/
+
+
+.difuminado {
+    width: 1000px;
+    padding: 20px;
+    margin-left: 200px;
+    background-color: linear-gradient(to right, #FF2C1F, transparent);
+
+}
+
+.difuminado::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #FF2C1F, transparent);
+}
+
+.svg-wrapper {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    width: 500px;
+}
+
+.shape1,
+.shape2 {
+    stroke-dasharray: 1120;
+    stroke-width: 5px;
+    fill: transparent;
+    stroke: var(--botones-color);
+    border-bottom: 5px solid black;
+    transition-timing-function: linear;
+    transition: stroke-dashoffset 4s, stroke-dasharray 4s;
+}
+
+.shape1 {
+    stroke-dashoffset: 1120;
+}
+
+.shape2 {
+    stroke-dashoffset: -1120;
+}
+
+.text {
+    font-size: 22px;
+    line-height: 32px;
+    letter-spacing: 8px;
+    color: #fff;
+    top: -48px;
+    position: relative;
+}
+
+.svg-wrapper:hover .shape1,
+.svg-wrapper:hover .shape2 {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 1120;
+}
+
+
+.estrenos,
+.cartelera {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    align-items: center;
+    margin: 0px 200px;
+}
+
+.estrenos-figure img,
+.cartelera img {
+    width: 200px;
+    height: 300px;
+}
+
+.estrenos-figure a,
+.cartelera a {
+    text-decoration: none;
+    color: var(--texto);
+}
+
+.cartelera-figure figcaption,
+.estrenos-figure figcaption {
+    text-align: center;
+}
+
+.cartelera p,
+.estrenos-figure p {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.promos {
+    margin: 50px 0;
+}
+
+.promociones {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    margin: 0px 250px;
+}
+
+.promociones img {
+    width: 400px;
 }
 
 /**********************Footer*****************/
