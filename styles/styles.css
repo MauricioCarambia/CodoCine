@@ -23,9 +23,8 @@ body {
     justify-content: space-between;
     align-items: center;
     font-size: 1.1rem;
-    margin: 0 30px;
-    top: 0;
-    z-index: 1;
+    padding: 0 20px;
+    border-bottom: 2px solid var(--botones-color);
 }
 
 .navLogo {
@@ -92,10 +91,13 @@ body {
     height: 700px;
 
 } */
+.banner {
+    height: 110dvh;
+}
 
 /**********************Footer*****************/
 footer {
-
+    border-top: 2px solid var(--botones-color);
     padding: 40px 0;
 }
 
