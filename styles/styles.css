@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+    --fondo: #000;
+    --botones-color: #FF2C1F;
+    --texto: #fff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,9 +13,9 @@
 }
 
 body {
-    background-color: #000;
+    background-color: var(--fondo);
     font-family: "montserrat", sans-serif;
-    color: white;
+    color: var(--texto);
 }
 
 .navbar {
@@ -30,7 +36,6 @@ body {
 
 .logo {
     width: 70px;
-    background-color: #000;
     filter: invert(100%);
 }
 
@@ -42,15 +47,13 @@ body {
 
 .lista a {
     text-decoration: none;
-    color: white;
+    color: var(--texto);
+    padding: 10px 20px;
 }
 
-.lista .lista-items a {
-    margin: 15px 20px;
-}
-
-.lista .lista-items a:hover {
-    border-bottom: 2px solid #FF2C1F;
+.lista a:hover {
+    border-bottom: 2px solid var(--botones-color);
+    font-weight: 700;
 }
 
 .navLogin {
@@ -73,7 +76,8 @@ body {
 }
 
 .navLogin a:hover {
-    background-color: #FF2C1F;
+    background-color: var(--botones-color);
+    font-weight: 700;
 }
 
 .login-icon {
@@ -91,18 +95,21 @@ body {
 
 /**********************Footer*****************/
 footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: 30px 0;
+
+    padding: 40px 0;
 }
 
 .footer-principal {
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-areas: "preguntas redes"
+        "p p";
     align-items: center;
     text-align: center;
     padding-bottom: 40px;
+}
+
+.preguntas {
+    grid-area: preguntas;
 }
 
 .preguntas ul {
@@ -120,9 +127,13 @@ footer {
     color: white;
 }
 
+.mapa a:hover {
+    border-bottom: 2px solid var(--botones-color);
+}
+
 .redes {
     padding: 20px 0;
-
+    grid-area: redes;
 }
 
 .redes p {
@@ -139,4 +150,5 @@ footer {
 
 footer p {
     text-align: center;
+    grid-area: p;
 }
