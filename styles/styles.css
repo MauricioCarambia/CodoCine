@@ -24,7 +24,6 @@ body {
     align-items: center;
     font-size: 1.1rem;
     padding: 0 20px;
-    border-bottom: 2px solid var(--botones-color);
 }
 
 .navLogo {
@@ -53,6 +52,12 @@ body {
 
 .lista a:hover {
     border-bottom: 2px solid var(--botones-color);
+
+}
+
+.lista li:hover {
+
+    transform: scale(1.2);
 }
 
 .navLogin {
@@ -72,17 +77,20 @@ body {
     padding: 15px;
     border-radius: 10px;
     border: none;
+    font-weight: 700;
+    background-color: var(--botones-color);
 }
 
 .navLogin a:hover {
-    background-color: var(--botones-color);
-    font-weight: 700;
+    border: 2px solid var(--botones-color);
+    background-color: var(--fondo);
 }
 
 .login-icon {
     filter: invert(100%);
     width: 30px;
     margin-right: 10px;
+
 }
 
 
@@ -421,7 +429,7 @@ body {
 .estrenos,
 .cartelera {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     justify-items: center;
     align-items: center;
     margin: 0px 200px;
@@ -458,11 +466,68 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
+    justify-content: center;
     margin: 0px 250px;
 }
 
 .promociones img {
     width: 400px;
+}
+
+/**********************contacto*****************/
+.dudas-contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    margin: 0 auto;
+    height: auto;
+}
+
+.dudas .difuminado,
+.reembolso .difuminado {
+    width: 700px;
+    margin-left: 0;
+}
+
+.preg-frecuentes,
+.reembolso-contenedor {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.details {
+    border: 1px solid var(--texto);
+    margin: 10px;
+    padding: 10px;
+}
+
+.details p {
+    padding: 5px 0 5px 30px;
+    width: 90%;
+}
+
+.details ul {
+    padding: 5px 0 5px 30px;
+    width: 90%;
+}
+
+.details a {
+    text-decoration: none;
+    color: var(--texto);
+    border-bottom: 1px solid var(--botones-color);
+}
+
+.details a:hover {
+    color: var(--botones-color);
+}
+
+.sumary {
+    padding: 10px;
+}
+
+.sumary::marker {
+    color: var(--botones-color);
 }
 
 /**********************Footer*****************/
@@ -517,6 +582,10 @@ footer {
     filter: invert(100%);
     padding: 0 10px;
     text-decoration: none;
+}
+
+.redes img:hover {
+    transform: scale(1.2);
 }
 
 
