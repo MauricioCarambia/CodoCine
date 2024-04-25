@@ -14,36 +14,44 @@
   </head>
   <body>
     <header>
-      <nav class="navbar">
-        <div class="navLogo">
-          <a href="index.html"><img class="logo" src="img/logoCine.png" alt="logo cine" /></a>
-          <h1>Codo Cinema</h1>
-        </div>
-
-        <ul class="lista">
-          <li class="lista-items">
-            <a href="index.html">Inicio</a>
-          </li>
-          <li class="lista-items">
-            <a href="cartelera.html">Cartelera</a>
-          </li>
-          <li class="lista-items">
-            <a href="compra.html">Compra Entrada</a>
-          </li>
-          <li class="lista-items">
-            <a href="precio.html">Precios y Cines</a>
-          </li>
-          <li class="lista-items">
-            <a href="nosotros.html">Nosotros</a>
-          </li>
-          <li class="lista-items">
-            <a href="contacto.html">Contactanos</a>
-          </li>
-        </ul>
-        <div class="navLogin">
-          <a href="sesion.html"> <img class="login-icon" src="img/login.png" alt="logo inicio sesion" /> Iniciar Sesion</a>
-        </div>
-      </nav>
+      <div id="wrapper">
+        <header id="#header">
+          <a href="#" id="menu_on">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </header>
+        <nav class="navbar">
+          <div class="navLogo">
+            <a href="index.html"><img class="logo" src="img/logoCine.png" alt="logo cine" /></a>
+            <h1>Codo Cinema</h1>
+          </div>
+          <ul class="lista">
+            <li class="lista-items">
+              <a href="index.html">Inicio</a>
+            </li>
+            <li class="lista-items">
+              <a href="cartelera.html">Cartelera</a>
+            </li>
+            <li class="lista-items">
+              <a href="compra.html">Compra Entrada</a>
+            </li>
+            <li class="lista-items">
+              <a href="precio.html">Precios y Cines</a>
+            </li>
+            <li class="lista-items">
+              <a href="nosotros.html">Nosotros</a>
+            </li>
+            <li class="lista-items">
+              <a href="contacto.html">Contactanos</a>
+            </li>
+          </ul>
+          <div class="navLogin">
+            <a href="sesion.html"> <img class="login-icon" src="img/login.png" alt="logo inicio sesion" /> Iniciar Sesion</a>
+          </div>
+        </nav>
+      </div>
     </header>
     <main>
       <div class="salas">
@@ -166,5 +174,19 @@
       </div>
       <p>© 2024 Todos los derechos reservados</p>
     </footer>
+    <script
+      src="http://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+      crossorigin="anonymous"></script>
+
+    <!-- Creamos nuestra función -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#menu_on").click(function () {
+          // Al hacer click...
+          $("body").toggleClass("visible_menu"); // Añadimos o eliminamos la clase 'visible_menu' al body
+        });
+      });
+    </script>
   </body>
 </html>
