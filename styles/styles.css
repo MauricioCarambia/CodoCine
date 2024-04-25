@@ -441,6 +441,11 @@ body {
     height: 300px;
 }
 
+.estrenos-figure img:hover,
+.cartelera img:hover {
+    transform: scale(1.05);
+}
+
 .estrenos-figure a,
 .cartelera a {
     text-decoration: none;
