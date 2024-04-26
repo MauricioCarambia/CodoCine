@@ -242,11 +242,14 @@ nav {
 }
 
 /*****************registrar****************/
+.registrarse {
+    text-align: center;
+}
 
 .registrar {
     display: grid;
     grid-template-columns: 1fr;
-    justify-items: center;
+    justify-content: center;
     padding: 50px 150px;
 }
 
@@ -743,6 +746,8 @@ footer p {
     .footer-principal {
         grid-template-areas: "preguntas redes"
             "p p";
+        font-size: 1.3rem;
+
     }
 
     /*******************inicio*****************/
@@ -905,9 +910,7 @@ footer p {
         margin: 50px auto;
     }
 
-    .registrarse {
-        text-align: center;
-    }
+
 
 
     /*******************precios***********************/
@@ -959,6 +962,7 @@ footer p {
     .footer-principal {
         grid-template-areas: "preguntas redes"
             "p p";
+        font-size: 1.5rem;
     }
 
 
@@ -1140,7 +1144,7 @@ footer p {
 
 
     .footer-principal {
-
+        font-size: 1.5rem;
         grid-template-areas: "preguntas redes"
             "p p";
 
