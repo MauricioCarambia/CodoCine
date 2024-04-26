@@ -1147,17 +1147,6 @@ footer p {
     }
 
     /*******************inicio*****************/
-
-
-
-    .slide-inner {
-        height: 500px;
-    }
-
-    .slide-item img {
-        height: 500px;
-    }
-
     .form-busqueda {
         display: flex;
         flex-direction: row;
@@ -1167,18 +1156,10 @@ footer p {
     }
 
     .form-busqueda .form-input {
-        width: 800px;
+        width: 700px;
+        margin-right: 20px;
     }
 
-    .form-busqueda .form-input.btnbuscar {
-        margin: 20px;
-    }
-
-    .form-busqueda .form-input.btnbuscar:hover {
-        border: 2px solid var(--botones-color);
-        background-color: var(--fondo);
-        color: var(--texto);
-    }
 
     /***********************estrenos***********************/
 
