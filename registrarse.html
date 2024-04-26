@@ -135,19 +135,17 @@
       </div>
       <p>© 2024 Todos los derechos reservados</p>
     </footer>
-    <script
-    src="http://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
-    crossorigin="anonymous"></script>
-
-  <!-- Creamos nuestra función -->
-  <script type="text/javascript">
-    $(document).ready(function () {
-      $("#menu_on").click(function () {
-        // Al hacer click...
-        $("body").toggleClass("visible_menu"); // Añadimos o eliminamos la clase 'visible_menu' al body
-      });
-    });
-  </script>
+    <script src="http://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous">
+    </script>
+    
+    <!-- Creamos nuestra función -->
+    <script type="text/javascript">
+     $( document ).ready(function() {
+       $('#menu_on').click(function(){ // Al hacer click...
+          $('body').toggleClass('visible_menu'); // Añadimos o eliminamos la clase 'visible_menu' al body
+        })
+     });
+    </script>
   </body>
 </html>
