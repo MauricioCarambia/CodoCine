@@ -39,19 +39,19 @@
         <h2>Crear nuevo usuario</h2>
         <form class="formulario" action="#">
           <label class="formulario-label" for="nombre">Nombre</label>
-          <input class="formulario-input" type="text" placeholder="Nombre" required />
+          <input class="formulario-input" type="text" id="nombre" placeholder="Nombre" required />
           <label class="formulario-label" for="apellido">Apellido</label>
-          <input class="formulario-input" type="text" placeholder="apellifo" required />
+          <input class="formulario-input" type="text" id="apellido" placeholder="apellifo" required />
           <label class="formulario-label" for="mail">Email</label>
-          <input class="formulario-input" type="email" placeholder="Email" required />
+          <input class="formulario-input" type="email" id="mail" placeholder="Email" required />
           <label class="formulario-label" for="pass">Contraseña</label>
-          <input class="formulario-input" type="password" placeholder="Contraseña" required />
+          <input class="formulario-input" type="password" id="pass" placeholder="Contraseña" required />
           <label class="formulario-label" for="pass_confirm">Confirma Contraseña</label>
-          <input class="formulario-input" type="password" placeholder="Contraseña" required />
+          <input class="formulario-input" type="password" id="pass_confirm" placeholder="Contraseña" required />
           <label class="formulario-label" for="celular">Celular</label>
-          <input class="formulario-input" type="number" placeholder="Celular" />
+          <input class="formulario-input" type="number" id="celular" placeholder="Celular" />
           <label class="formulario-label" for="fecNac">Fecha de Nacimiento</label>
-          <input class="formulario-input" type="date" placeholder="fecha de nacimiento" />
+          <input class="formulario-input" type="date" id="fecNac" />
           <label class="formulario-label" for="genero">Genero</label>
           <select class="formulario-input" name="genero" id="genero">
             <option value="">Selecciona una opcion</option>
@@ -60,7 +60,7 @@
             <option value="otro">Otro</option>
             <option value="noindica">Prefieron no indicar</option>
           </select>
-          <label for="prom"> <input type="checkbox" />¿Desea recibir emails con promociones y estrenos?</label>
+          <label for="prom"> <input type="checkbox" id="prom" />¿Desea recibir emails con promociones y estrenos?</label>
           <input class="formulario-input login" type="submit" value="Registrarse" />
         </form>
       </div>
