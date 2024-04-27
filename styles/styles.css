@@ -651,7 +651,7 @@ footer p {
 .estrenos,
 .cartelera {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     align-items: center;
     margin: 0 auto;
@@ -691,7 +691,7 @@ footer p {
 
 .promociones {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     justify-items: center;
     margin: 0px;
 }
