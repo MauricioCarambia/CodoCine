@@ -1054,4 +1054,39 @@ footer p {
         width: 350px;
     }
 
+
+
+
+    /***********Compra****************************************************/
+    .hidden{
+        display: none;
+    }
+    .container{
+        width: 35%;
+        height: 500px;
+        display: grid;
+        /* border: 2px crimson solid; */
+        grid-template-rows: 20% 20% 20% 20%;
+        grid-template-columns: 50%;
+        row-gap: 20px;
+        justify-content: center;
+    }
+    .select{
+        margin-top: 15px;
+        /* border: #FF2C1F 2px solid; */
+    }
+
+    .select .btncomprar{
+        margin: 0 auto;
+        cursor: pointer;
+    }
+    .select select{
+        height: 30%;
+        width: 100%;
+        margin-top: 10px;
+        background-color: black;
+        color: #fff;
+        border-radius: 8px;
+    }
+
 }
