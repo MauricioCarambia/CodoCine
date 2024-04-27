@@ -39,7 +39,7 @@ header {
 
 
 nav {
-    opacity: 0;
+    opacity: 1;
     visibility: hidden;
     display: flex;
     flex-direction: column;
@@ -55,7 +55,7 @@ nav {
     padding: 2rem;
     box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
     z-index: 20;
-    height: auto;
+    height: 100%;
 }
 
 .nav.visible {
@@ -659,8 +659,8 @@ footer p {
 
 .estrenos-figure img,
 .cartelera img {
-    width: 180px;
-    height: 270px;
+    width: 250px;
+    height: 350px;
 }
 
 .estrenos-figure img:hover,
