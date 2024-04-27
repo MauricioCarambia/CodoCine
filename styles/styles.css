@@ -704,11 +704,6 @@ footer p {
 
 @media only screen and (min-width: 768px) {
 
-    .estrenos-figure img,
-    .cartelera img {
-        width: 250px;
-        height: 350px;
-    }
 
     /***************difuminado*************/
 
@@ -727,6 +722,23 @@ footer p {
 
     /*******************inicio*****************/
 
+    .estrenos,
+    .cartelera {
+
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+    .estrenos-figure img,
+    .cartelera img {
+        width: 220px;
+        height: 300px;
+    }
+
+    .promociones {
+        grid-template-columns: 1fr 1fr;
+
+    }
 
 
 }
