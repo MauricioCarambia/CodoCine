@@ -19,26 +19,67 @@ body {
     color: var(--texto);
 }
 
-nav a {
-
-    text-decoration: none;
-    padding: 10px;
+.abrir-menu,
+.cerrar-menu {
+    border: 0;
+    font-size: 2rem;
+    background-color: transparent;
+    cursor: pointer;
     color: var(--texto);
-    text-decoration: none;
-    color: var(--texto);
-    padding: 10px 20px;
-    text-transform: uppercase;
-    text-align: center;
 }
 
-.lista {
-    list-style: none;
+
+
+header {
+    display: flex;
+    margin-left: 10px;
+    background-color: var(--fondo);
+
+}
+
+
+nav {
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    margin-bottom: 40px;
+    text-align: center;
+    gap: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--fondo);
+    padding: 2rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    z-index: 20;
+    height: 100%;
 }
 
-.lista-items {
+.nav.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    text-transform: uppercase;
+}
+
+.nav-list li {
     padding: 20px 0;
+
+}
+
+.nav-list li a {
+    color: var(--texto);
+    text-decoration: none;
+    margin: 0 auto;
+    padding: 10px 50px;
 }
 
 .navLogo {
@@ -53,15 +94,9 @@ nav a {
     filter: invert(100%);
 }
 
-
-.lista-items:hover {
+.nav-list li:hover {
     border-bottom: 2px solid var(--botones-color);
     border-top: 2px solid var(--botones-color);
-
-}
-
-.lista li:hover {
-
     transform: scale(1.2);
 }
 
@@ -96,72 +131,6 @@ nav a {
 
 }
 
-#menu_on {
-    display: inline-block;
-    width: 30px;
-    height: 20px;
-    position: relative;
-    margin: 20px;
-    z-index: 20;
-}
-
-#menu_on span {
-    width: 100%;
-    height: 4px;
-    border-radius: 4px;
-    display: block;
-    position: absolute;
-    background: var(--texto);
-    transition: all 0.25s ease;
-    /* Propiedades a animar | Tiempo | Tipo animación*/
-    transform-origin: 0px 100%;
-}
-
-#menu_on span:nth-child(2) {
-    top: calc(50% - 2px);
-}
-
-#menu_on span:nth-child(3) {
-    bottom: 0;
-}
-
-nav {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: -300px;
-    /* Escondemos nuestro menú con un valor negativo */
-    width: 300px;
-    z-index: 12;
-    padding: 30px 30px 30px;
-    background: var(--fondo);
-    opacity: 0;
-    transition: all 0.75s ease;
-    font-size: 1.2em;
-    overflow-y: auto;
-}
-
-.visible_menu span:nth-child(1) {
-    transform: rotate(45deg) translate(-2px, 1px);
-}
-
-.visible_menu span:nth-child(2) {
-    opacity: 0;
-}
-
-.visible_menu span:nth-child(3) {
-    transform: rotate(-45deg) translate(-3px, 3px);
-}
-
-.visible_menu nav {
-    left: 0;
-    opacity: 1;
-}
-
-.visible_menu #content {
-    transform: translateX(260px);
-}
-
 /*****************sesion*************/
 
 
@@ -169,7 +138,7 @@ nav {
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
-    margin: 50px 250px 100px;
+    margin: 50px 50px;
 }
 
 .formulario {
@@ -250,7 +219,7 @@ nav {
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
-    padding: 50px 150px;
+    padding: 50px 80px;
 }
 
 /*******************precios***********************/
@@ -371,7 +340,7 @@ figure.snip1206.hover figcaption p {
 /***************difuminado*************/
 
 .difuminado {
-    width: 400px;
+    width: 300px;
     padding: 20px;
     margin-left: 50px;
     background-color: linear-gradient(to right, #FF2C1F, transparent);
@@ -654,7 +623,7 @@ footer p {
     padding: 10px;
     font-size: 1.5rem;
     border-radius: 10px;
-    width: 600px;
+    width: 90%;
 }
 
 .form-busqueda .form-input.btnbuscar {
@@ -682,7 +651,7 @@ footer p {
 .estrenos,
 .cartelera {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     align-items: center;
     margin: 0 auto;
@@ -690,8 +659,8 @@ footer p {
 
 .estrenos-figure img,
 .cartelera img {
-    width: 200px;
-    height: 300px;
+    width: 180px;
+    height: 270px;
 }
 
 .estrenos-figure img:hover,
@@ -723,17 +692,18 @@ footer p {
 .promociones {
     display: grid;
     grid-template-columns: 1fr;
-    justify-content: center;
-    margin: 0px 250px;
+    justify-items: center;
+    margin: 0px;
 }
 
 .promociones img {
-    width: 400px;
+    width: 350px;
     padding: 10px 0;
 }
 
 
 @media only screen and (min-width: 768px) {
+
 
     /***************difuminado*************/
 
@@ -752,6 +722,23 @@ footer p {
 
     /*******************inicio*****************/
 
+    .estrenos,
+    .cartelera {
+
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+    .estrenos-figure img,
+    .cartelera img {
+        width: 220px;
+        height: 300px;
+    }
+
+    .promociones {
+        grid-template-columns: 1fr 1fr;
+
+    }
 
 
 }
@@ -767,7 +754,13 @@ footer p {
         margin: 50px auto;
     }
 
+    .registrar {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        padding: 50px 200px;
 
+    }
 
 
     /*******************precios***********************/
@@ -839,6 +832,14 @@ footer p {
     }
 
     /***********************estrenos***********************/
+    .estrenos,
+    .cartelera {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        align-items: center;
+        margin: 0 auto;
+    }
 
 
 
@@ -859,91 +860,59 @@ footer p {
 @media only screen and (min-width: 1200px) {
 
 
-    nav {
+
+    header {
         display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--fondo);
+        width: 100%;
+        margin: 0;
+    }
+
+    .nav {
+        opacity: 1;
+        visibility: visible;
+        display: flex;
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        font-size: 1.1rem;
-        padding: 0 20px;
+        position: initial;
+        gap: 5em;
+        background-color: var(--fondo);
+        padding: 0px;
+        box-shadow: none;
     }
 
-    nav a {
-        display: block;
-        text-decoration: none;
-        padding: 10px;
-        color: var(--texto);
-    }
-
-    .lista {
+    .nav-list {
         display: flex;
+        flex-direction: row;
+        justify-content: space-around;
         list-style: none;
         align-items: center;
+
     }
 
-    .lista a {
+    .nav-list li a {
         text-decoration: none;
         color: var(--texto);
         padding: 10px 20px;
         text-transform: uppercase;
+
     }
 
-
-
+    .abrir-menu,
+    .cerrar-menu {
+        display: none;
+    }
 
     .navLogo {
         display: flex;
+        flex-direction: row;
         align-items: center;
 
     }
-
-    .logo {
-        width: 70px;
-        filter: invert(100%);
-    }
-
-
-    .lista a:hover {
-        border-bottom: 2px solid var(--botones-color);
-
-    }
-
-    .lista li:hover {
-
-        transform: scale(1.2);
-    }
-
-    .navLogin {
-        list-style: none;
-    }
-
-    .navLogin a {
-        display: flex;
-        justify-content: space-around;
-        list-style: none;
-        align-items: center;
-        text-decoration: none;
-        color: white;
-        padding: 15px;
-        border-radius: 10px;
-        border: none;
-        font-weight: 700;
-        background-color: var(--botones-color);
-    }
-
-
-    .navLogin a:hover {
-        border: 2px solid var(--botones-color);
-        background-color: var(--fondo);
-    }
-
-    .login-icon {
-        filter: invert(100%);
-        width: 30px;
-        margin-right: 10px;
-
-    }
-
-
 
     /***************login************/
 
@@ -956,6 +925,13 @@ footer p {
 
 
     /*****************registrar****************/
+    .registrar {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        padding: 50px 300px;
+
+    }
 
 
     /*******************precios***********************/
@@ -1021,6 +997,11 @@ footer p {
         margin-right: 20px;
     }
 
+    .slide-inner {
+
+        width: 80%;
+
+    }
 
     /***********************estrenos***********************/
 
