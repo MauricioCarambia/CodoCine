@@ -137,7 +137,7 @@ nav {
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
-    margin: 50px 250px 100px;
+    margin: 50px 50px;
 }
 
 .formulario {
@@ -218,7 +218,7 @@ nav {
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
-    padding: 50px 150px;
+    padding: 50px 80px;
 }
 
 /*******************precios***********************/
@@ -339,7 +339,7 @@ figure.snip1206.hover figcaption p {
 /***************difuminado*************/
 
 .difuminado {
-    width: 400px;
+    width: 300px;
     padding: 20px;
     margin-left: 50px;
     background-color: linear-gradient(to right, #FF2C1F, transparent);
@@ -485,7 +485,7 @@ footer p {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 400px;
+    height: 300px;
     margin: auto;
 }
 
@@ -503,7 +503,7 @@ footer p {
 
 .slide-item img {
     display: block;
-    height: 400px;
+    height: 300px;
     width: 100%;
     contain: content;
 }
@@ -658,8 +658,8 @@ footer p {
 
 .estrenos-figure img,
 .cartelera img {
-    width: 200px;
-    height: 300px;
+    width: 180px;
+    height: 270px;
 }
 
 .estrenos-figure img:hover,
@@ -696,7 +696,7 @@ footer p {
 }
 
 .promociones img {
-    width: 400px;
+    width: 350px;
     padding: 10px 0;
 }
 
@@ -735,7 +735,13 @@ footer p {
         margin: 50px auto;
     }
 
+    .registrar {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        padding: 50px 200px;
 
+    }
 
 
     /*******************precios***********************/
@@ -846,7 +852,7 @@ footer p {
         justify-content: space-between;
         align-items: center;
         position: initial;
-        gap: 10em;
+        gap: 5em;
         background-color: var(--fondo);
         padding: 0px;
         box-shadow: none;
@@ -892,6 +898,13 @@ footer p {
 
 
     /*****************registrar****************/
+    .registrar {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        padding: 50px 300px;
+
+    }
 
 
     /*******************precios***********************/
