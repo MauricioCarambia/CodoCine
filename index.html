@@ -10,11 +10,31 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet" />
-      <!-- Primero cargamos Jquery -->
-
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   </head>
   <body>
-    
+    <header>
+      <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
+      <nav class="nav " id="nav">
+        <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i></button>
+        <div class="navLogo">
+          <a href="index.html"><img class="logo" src="img/logoCine.png" alt="logo cine" /></a>
+          <h1>Codo Cinema</h1>
+        </div>          
+        <ul class="nav-list">
+              <li><a href="#">Inicio</a></li>
+              <li><a href="#">Quiénes somos</a></li>
+              <li><a href="#">Servicios</a></li>
+              <li><a href="#">Qué hacemos</a></li>
+              <li><a href="#">Contacto</a></li>
+        </ul>
+        <div class="navLogin">
+            <a href="sesion.html"> <img class="login-icon" src="img/login.png" alt="logo inicio sesion" /> Iniciar Sesion</a>
+        </div>
+      </nav>
+      
+  </header>
+<!--     
 <div id="wrapper">
 	<header id="#header">
 		<a href="#" id="menu_on">
@@ -53,7 +73,7 @@
         <a href="sesion.html"> <img class="login-icon" src="img/login.png" alt="logo inicio sesion" /> Iniciar Sesion</a>
       </div>
 	  </nav>
-</div>
+</div> -->
     
     <main>
       <section class="banner">
@@ -100,7 +120,7 @@
         <form class="form-busqueda" action="#" method="#">
           <label class="form-label" for="search">Busca una pelicula</label>
           <input class="form-input" type="text" name="search" id="search" placeholder="Buscar película..." />
-          <input class="form-input btnbuscar" type="submit" value="Buscar"></input>
+          <input class="form-input btnbuscar" type="button" value="Buscar"></input>
         </form>
       </section>
       <section class="prox-estrenos">
@@ -304,22 +324,6 @@
       </div>
       <p>© 2024 Todos los derechos reservados</p>
     </footer>
-    <script src="http://code.jquery.com/jquery-3.2.1.slim.min.js"
-integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous">
-</script>
-
-<!-- Creamos nuestra función -->
-<script src="http://code.jquery.com/jquery-3.2.1.slim.min.js"
-integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous">
-</script>
-
-<!-- Creamos nuestra función -->
-<script type="text/javascript">
- $( document ).ready(function() {
-   $('#menu_on').click(function(){ // Al hacer click...
-      $('body').toggleClass('visible_menu'); // Añadimos o eliminamos la clase 'visible_menu' al body
-    })
- });
-</script>
+    <script src="JS/main.js"></script>
   </body>
 </html>
