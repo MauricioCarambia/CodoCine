@@ -740,6 +740,46 @@ footer p {
 
     }
 
+    /* -------nosotros-------- */
+    .cont-ppal {
+        /* border: 3px solid blue; */
+        /* grid-template-rows: 1fr 1fr 1fr; */
+        /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    }
+
+    .contenedor-mapas {}
+
+    .mapas {
+        /* border: 3px solid blue; */
+        /* width: 800px; */
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+        grid-area: mapas;
+    }
+
+    .mapas p {
+        height: 350px;
+        width: 80%;
+        /* padding: 20px; */
+        margin-left: 50px;
+    }
+
+    .mapa-chico {
+        /* border: 3px solid blue; */
+        text-align: center;
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .formulario {
+        align-items: center;
+        text-align: center;
+    }
 
 }
 
@@ -854,6 +894,25 @@ footer p {
         grid-template-columns: 1fr 1fr;
         justify-items: center;
         margin: 0px auto;
+    }
+
+    .cont-ppal{
+        /* border: 3px solid red; */
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: baseline;
+        align-content: center;
+        grid-template-areas: 'mapas' 'fromulario'
+        'mapas' 'formulario';
+    }
+
+    .descripcion-mapas p{
+        /* border: 3px solid red; */
+        /* max-height: 350px; */
+        max-width: fit-content;
+    }
+    .formulario{
+
     }
 }
 
@@ -1035,4 +1094,156 @@ footer p {
         width: 350px;
     }
 
+}
+
+/* -------nosotros-------- */
+.cont-ppal {
+    /* border: 3px solid blue;
+    display: grid;
+    grid-template-columns: 1fr 1fr; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    display: grid;
+    grid-template-areas: 'mapas'
+    'formulario';
+
+}
+
+.contenedor-mapas {
+    grid-area: mapas;
+}
+
+.descripcion-mapas {
+    /* border: 3px solid blue; */
+    /* width: 800px; */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    grid-area: mapas;
+}
+
+.descripcion-mapas p {
+    height: fit-content;
+    width: 80%;
+    /* padding: 20px; */
+    margin-left: 50px;
+}
+
+.mapa-chico {
+    /* border: 3px solid blue; */
+    text-align: center;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.formulario {
+    align-items: center;
+    text-align: center;
+}
+
+
+/* -----------formulario nosotros----------- */
+
+.contact_form {
+    /* border: 3px solid blue; */
+    width: 460px;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 10px;
+    /* padding-top: 30px; */
+    /* padding-bottom: 20px; */
+    background-color: var(--fondo);
+    /* padding-left: 30px; */
+    grid-area: formu;
+}
+
+
+input {
+    background-color: var(--texto);
+    width: 408px;
+    height: 40px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--texto);
+    margin-top: 10px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+
+textarea {
+    background-color: var(--texto);
+    width: 405px;
+    height: 150px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--texto);
+    margin-top: 10px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    padding-top: 15px;
+}
+
+
+label {
+    display: block;
+    float: center;
+}
+
+
+button {
+    height: 45px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    background-color: var(--fondo);
+    border-color: var(--botones-color);
+    border-style: solid;
+    border-radius: 10px;
+    width: 420px;
+    cursor: pointer;
+}
+
+
+button p {
+    color: #fff;
+}
+
+
+span {
+    color: var(--texto);
+}
+
+
+.aviso {
+    font-size: 13px;
+    color: var(--texto);
+}
+
+::-webkit-input-placeholder {
+    color: #a8a8a8;
+}
+
+
+::-webkit-textarea-placeholder {
+    color: #a8a8a8;
+}
+
+
+.formulario input:focus {
+    outline: 0;
+    border: 1px solid var(--botones-color);
+}
+
+
+.formulario textarea:focus {
+    outline: 0;
+    border: 1px solid --botones-color;
 }
