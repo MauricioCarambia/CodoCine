@@ -1161,7 +1161,7 @@ footer p {
 }
 
 
-input {
+.form-input {
     background-color: var(--texto);
     width: 408px;
     height: 40px;
@@ -1175,7 +1175,7 @@ input {
 }
 
 
-textarea {
+.form-textarea {
     background-color: var(--texto);
     width: 405px;
     height: 150px;
@@ -1190,13 +1190,13 @@ textarea {
 }
 
 
-label {
+.form-label {
     display: block;
     float: center;
 }
 
 
-button {
+.form-button {
     height: 45px;
     padding-left: 5px;
     padding-right: 5px;
@@ -1212,7 +1212,7 @@ button {
 }
 
 
-button p {
+.form-button p {
     color: #fff;
 }
 
