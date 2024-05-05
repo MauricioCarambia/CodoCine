@@ -9,8 +9,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
   </head>
   <body>
     <header>
@@ -18,7 +22,9 @@
       <nav class="nav" id="nav">
         <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i></button>
         <div class="navLogo">
-          <a href="index.html"><img class="logo" src="img/logoCine.png" alt="logo cine" /></a>
+          <a href="index.html"
+            ><img class="logo" src="img/logoCine.png" alt="logo cine"
+          /></a>
           <h1>Codo Cinema</h1>
         </div>
         <ul class="nav-list">
@@ -30,47 +36,69 @@
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
         <div class="navLogin">
-          <a href="sesion.html"> <img class="login-icon" src="img/login.png" alt="logo inicio sesion" /> Iniciar Sesion</a>
+          <a href="sesion.html">
+            <img
+              class="login-icon"
+              src="img/login.png"
+              alt="logo inicio sesion"
+            />
+            Iniciar Sesion</a
+          >
         </div>
       </nav>
     </header>
     <main>
-      <div class="container">
-        <div class="select">
-          <label for="selection-cine">1. Elija lugar de la funcion</label>
-          <select name="select-cine" id="selection-cine">
-            <option value="" class="hidden">Selecciona una opción</option>
-            <option value="Film 1">Cine 1</option>
-            <option value="Film 2">Cine 2</option>
-            <option value="Film 3">Cine 3</option>
-        </select>
+      <h2 class="difuminado"></h2>
+      <div class="compra">
+        <div class="datos">
+          <div class="select">
+            <select name="select-cine" id="selection-cine">
+              <option value="" class="hidden">Selecciona el cine</option>
+              <option value="place 1">Cine 1</option>
+              <option value="place 2">Cine 2</option>
+              <option value="place 3">Cine 3</option>
+            </select>
+          </div>
+          <div class="select">
+            <select name="select-peli" id="selection-peli" onchange="mostrarInfo()">
+              <option value="" class="hidden">Selecciona una pelicula</option>
+              <option value="Film 1">Peliculá 1</option>
+              <option value="Film 2">Peliculá 2</option>
+              <option value="Film 3">Peliculá 3</option>
+            </select>
+          </div>
+          <div class="select">
+            <select name="select-horario" id="selection-horario">
+              <option value="" class="hidden">Selecciona un horario</option>
+              <option value="hour 1">Horario 1</option>
+              <option value="hour 2">Horario 2</option>
+              <option value="hour 3">Horario 3</option>
+            </select>
+          </div>
+          <div class="select">
+            <a href="sesion.html" class="btncomprar">Comprar</a>
+          </div>
         </div>
-        <div class="select">
-          <label for="selection-peli">2. Elija la pelicula</label>
-         <select name="select-peli" id="selection-peli">
-            <option value="" class="hidden">Selecciona una opción</option>
-            <option value="Film 1">Peliculá 1</option>
-            <option value="Film 2">Peliculá 2</option>
-            <option value="Film 3">Peliculá 3</option>
-          </select>
-        </div>
-        <div class="select">
-          <label for="selection-cine">3. Elija horario disponible</label>
-          <select name="select-peli" id="selection-peli">
-             <option value="" class="hidden">Selecciona una opción</option>
-             <option value="Film 1">Peliculá 1</option>
-             <option value="Film 2">Peliculá 2</option>
-             <option value="Film 3">Peliculá 3</option>
-           </select>
-         </div>
-         <div class="select">
-          <button class="btncomprar">Comprar</button>
-         </div>
-      </div>
+        <div class="info" id="compraInfo">
+          <div class="cara">
+            <img alt="portada" id="portadaImagen" />
 
+          </div>
+          <div class="descp">
+            <h2 id="tituloFilm">Forest Gump</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit vero alias corporis esse exercitationem iure, eaque voluptates adipisci officia reprehenderit magnam laudantium neque reiciendis saepe ducimus ea nulla, eum cum laborum necessitatibus, praesentium delectus amet. Omnis totam officia suscipit vel.</p>
+            <ul>
+              <li><span>Genero:</span> Lorem.</li>
+              <li><span>Duracion:</span> 180min</li>
+              <li><span>Director:</span> Lorem, ipsum.</li>
+              <li><span>Actores:</span> Lorem ipsum dolor sit amet consectetur.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </main>
 
-    <footer>
+    <footer id="footerCompra">
       <div class="footer-principal">
         <div class="preguntas">
           <h3>Mapa del Sitio</h3>

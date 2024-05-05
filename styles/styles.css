@@ -340,9 +340,9 @@ figure.snip1206.hover figcaption p {
 /***************difuminado*************/
 
 .difuminado {
-    width: 300px;
+    width: 80%;
     padding: 20px;
-    margin-left: 50px;
+    /* margin-left: 50px; */
     background-color: linear-gradient(to right, #FF2C1F, transparent);
 
 }
@@ -658,7 +658,7 @@ footer p {
 }
 
 .estrenos-figure img,
-.cartelera img {
+.cartelera img, .info img {
     width: 180px;
     height: 270px;
 }
@@ -700,7 +700,80 @@ footer p {
     width: 350px;
     padding: 10px 0;
 }
+/***********Compra****************************************************/
+.hidden{
+        display: none;
+}
+.compra{
+    display: grid;
+    grid-row-gap: 25px;
+    height: auto;
+}
+.info{
+    /* border: #FF2C1F 2px solid; */
+    display: none;
+    grid-template-columns: 45% 55%;
+    width: 100%;
+    font-size: 10px;
+}
 
+.info .descp, .info .cara{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.info .descp h2{
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.info .descp ul{
+    margin-top: 20px;
+    list-style: none;
+}
+.info .descp span{
+    font-weight: bolder;
+}
+.info .cara img{
+    width: 100%;
+    height: auto;
+}
+
+.datos{
+        width: 100%;
+        display: grid;
+        /* border: 2px crimson solid; */
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: 70%;
+        grid-gap: 35px;
+        justify-content: center;
+}
+
+.select .btncomprar{
+        text-align: center;
+        cursor: pointer;
+        width: 70%;
+        margin: 0 auto;
+        text-decoration: none;
+}
+
+.select select{
+        height: 100%;
+        width: 100%;
+        /* margin-top: 5%; */
+        background-color: black;
+        color: #fff;
+        border-radius: 8px;
+        border-color: #FF2C1F;
+        text-indent: 2px;
+        
+}
+.select select:focus{
+        border-color: #FF2C1F;
+}
+
+#footerCompra{
+    margin-top: 30px;
+}
 
 @media only screen and (min-width: 768px) {
 
@@ -708,7 +781,7 @@ footer p {
     /***************difuminado*************/
 
     .difuminado {
-        width: 600px;
+        width: 100%;
     }
 
     /*****************footer**************/
@@ -740,7 +813,21 @@ footer p {
 
     }
 
+    /*************compra****************************/
+    .compra{
+        grid-template-columns: 1fr 2fr;
+        height: auto;
+        grid-row-gap: 0px;
+        margin: 20px 0 20px;
+    }
 
+    .select select{
+        height: 50%;
+    }
+    .cara img{
+        /* max-width: 80%; */
+        height: auto;
+    }
 }
 
 @media only screen and (min-width: 992px) {
@@ -1035,39 +1122,30 @@ footer p {
         width: 350px;
     }
 
-
-
-
-    /***********Compra****************************************************/
-    .hidden{
-        display: none;
+    /**********************compra***********************/
+    .datos{
+        grid-template-columns: 60%;
+        row-gap: 0;
     }
-    .container{
-        width: 35%;
-        height: 500px;
-        display: grid;
-        /* border: 2px crimson solid; */
-        grid-template-rows: 20% 20% 20% 20%;
-        grid-template-columns: 50%;
-        row-gap: 20px;
-        justify-content: center;
+    
+    .compra{
+        grid-template-columns: 40% 60%;
+        margin-top: 0;
     }
-    .select{
-        margin-top: 15px;
-        /* border: #FF2C1F 2px solid; */
-    }
-
-    .select .btncomprar{
-        margin: 0 auto;
-        cursor: pointer;
-    }
-    .select select{
-        height: 30%;
+    
+    .compra .cara img{
         width: 100%;
-        margin-top: 10px;
-        background-color: black;
-        color: #fff;
-        border-radius: 8px;
+    }
+    
+    .info{
+        font-size: medium;
+        grid-template-columns: 1fr 2fr;
+    }
+    .info .descp h2{
+        font-size: larger;
     }
 
 }
+
+
+
