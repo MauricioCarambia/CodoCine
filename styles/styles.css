@@ -701,6 +701,15 @@ footer p {
     padding: 10px 0;
 }
 /***********Compra****************************************************/
+.disable{
+    background-color: #222222;
+    color: #828282;
+}
+.disable:hover{
+    background-color: #414040;
+    color: black;
+    border: none;
+}
 .hidden{
         display: none;
 }
@@ -717,23 +726,24 @@ footer p {
     font-size: 10px;
 }
 
-.info .descp, .info .cara{
+.info .detalles, .info .caratula{
     padding-left: 10px;
     padding-right: 10px;
 }
-.info .descp h2{
+.info .detalles h2{
     margin-bottom: 10px;
-    font-size: 14px;
+    font-size: 18px;
 }
 
-.info .descp ul{
-    margin-top: 20px;
+.info .detalles ul{
+    /* margin-top: 20px; */
+    margin-bottom: 10px;
     list-style: none;
 }
-.info .descp span{
+.info .bolder{
     font-weight: bolder;
 }
-.info .cara img{
+.info .caratula img{
     width: 100%;
     height: auto;
 }
@@ -816,17 +826,20 @@ footer p {
     /*************compra****************************/
     .compra{
         grid-template-columns: 1fr 2fr;
-        height: auto;
-        grid-row-gap: 0px;
-        margin: 20px 0 20px;
+        height: 380px;
+        /* grid-row-gap: 0px; */
+        margin-top: 20px;
+        
     }
-
+    .info{
+        grid-template-columns: 1fr 2fr;
+        font-size: 12px;
+    }
     .select select{
-        height: 50%;
+        height: 60%;
     }
-    .cara img{
-        /* max-width: 80%; */
-        height: auto;
+    #footerCompra{
+        margin-top: 10px;
     }
 }
 
@@ -942,8 +955,10 @@ footer p {
         justify-items: center;
         margin: 0px auto;
     }
-}
 
+ /*************compra****************************/
+
+}
 @media only screen and (min-width: 1200px) {
 
 
@@ -1124,25 +1139,27 @@ footer p {
 
     /**********************compra***********************/
     .datos{
-        grid-template-columns: 60%;
-        row-gap: 0;
+        grid-template-columns: 70%;
+        height: 400px;
     }
     
     .compra{
-        grid-template-columns: 40% 60%;
-        margin-top: 0;
+        grid-template-columns: 30% 70%;
+        height: auto;
     }
     
-    .compra .cara img{
-        width: 100%;
-    }
     
+    .datos .select .btncomprar{
+        width: 50%;
+    }
+
+
     .info{
-        font-size: medium;
+        font-size: small;
         grid-template-columns: 1fr 2fr;
     }
-    .info .descp h2{
-        font-size: larger;
+    .info .detalles h2{
+        font-size: 25px;
     }
 
 }
