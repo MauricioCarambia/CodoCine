@@ -28,6 +28,9 @@ body {
     color: var(--texto);
 }
 
+.cerrar-menu {
+    color: var(--botones-color);
+}
 
 
 header {
@@ -672,6 +675,7 @@ footer p {
 .info img {
     width: 180px;
     height: 270px;
+    border-radius: 10px;
 }
 
 .estrenos-figure img:hover,
