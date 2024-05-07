@@ -735,7 +735,6 @@ footer p {
 }
 
 .info {
-    /* border: #FF2C1F 2px solid; */
     display: none;
     grid-template-columns: 45% 55%;
     width: 100%;
@@ -993,12 +992,13 @@ span {
     /*************compra****************************/
     .compra {
         grid-template-columns: 1fr 2fr;
-        height: 380px;
-        /* grid-row-gap: 0px; */
+        height: auto;
         margin-top: 20px;
 
     }
-
+    .datos{
+        height: 380px;
+    }
     .info {
         grid-template-columns: 1fr 2fr;
         font-size: 12px;
@@ -1164,8 +1164,6 @@ span {
     }
 }
 
-/*************compra****************************/
-
 @media only screen and (min-width: 1200px) {
 
 
@@ -1317,15 +1315,19 @@ span {
     /****************compra********************/
 
     .info .caratula img {
-        width: 60%;
-        height: auto;
+        width: 90%;
     }
-
-    .info .detalles,
+    .info{
+        font-size: 13px;
+    }
+    .info .detalles h2{
+        font-size: 20px;
+    }
+    /* .info .detalles,
     .info .caratula {
         padding-left: 0px;
         padding-right: 0px;
-    }
+    } */
 
     /***********************estrenos***********************/
 
