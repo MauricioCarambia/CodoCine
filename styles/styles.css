@@ -492,7 +492,7 @@ footer p {
 
 .slide-open:checked+.slide-item {
     position: static;
-    opacity: 100;
+    opacity: 1;
 }
 
 .slide-item {
@@ -840,7 +840,47 @@ footer p {
     }
     #footerCompra{
         margin-top: 10px;
+    }    /* -------nosotros-------- */
+    .cont-ppal {
+        /* border: 3px solid blue; */
+        /* grid-template-rows: 1fr 1fr 1fr; */
+        /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
     }
+
+    .contenedor-mapas {}
+
+    .mapas {
+        /* border: 3px solid blue; */
+        /* width: 800px; */
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+        grid-area: mapas;
+    }
+
+    .mapas p {
+        height: 350px;
+        width: 80%;
+        /* padding: 20px; */
+        margin-left: 50px;
+    }
+
+    .mapa-chico {
+        /* border: 3px solid blue; */
+        text-align: center;
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .formulario {
+        align-items: center;
+        text-align: center;
+    }
+
 }
 
 @media only screen and (min-width: 992px) {
@@ -955,6 +995,7 @@ footer p {
         justify-items: center;
         margin: 0px auto;
     }
+}
 
  /*************compra****************************/
 
@@ -1137,32 +1178,4 @@ footer p {
         width: 350px;
     }
 
-    /**********************compra***********************/
-    .datos{
-        grid-template-columns: 70%;
-        height: 400px;
-    }
-    
-    .compra{
-        grid-template-columns: 30% 70%;
-        height: auto;
-    }
-    
-    
-    .datos .select .btncomprar{
-        width: 50%;
-    }
-
-
-    .info{
-        font-size: small;
-        grid-template-columns: 1fr 2fr;
-    }
-    .info .detalles h2{
-        font-size: 25px;
-    }
-
 }
-
-
-
