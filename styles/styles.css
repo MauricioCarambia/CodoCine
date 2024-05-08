@@ -672,7 +672,7 @@ footer p {
 
 .estrenos-figure img,
 .cartelera img,
-.info img {
+.info img, .detallePeli img {
     width: 180px;
     height: 270px;
     border-radius: 10px;
@@ -736,11 +736,12 @@ footer p {
     display: grid;
     grid-row-gap: 25px;
     height: auto;
+    margin-bottom: 30px;
 }
 
 .info {
     display: none;
-    grid-template-columns: 45% 55%;
+    grid-template-columns: auto 1fr;
     width: 100%;
     font-size: 10px;
 }
@@ -766,10 +767,10 @@ footer p {
     font-weight: bolder;
 }
 
-.info .caratula img {
+/* .info .caratula img {
     width: 100%;
     height: auto;
-}
+} */
 
 .datos {
     width: 100%;
@@ -804,11 +805,6 @@ footer p {
 .select select:focus {
     border-color: #FF2C1F;
 }
-
-#footerCompra {
-    margin-top: 30px;
-}
-
 
 /* -------nosotros-------- */
 
@@ -847,7 +843,43 @@ footer p {
     margin: 2rem;
     padding: 2rem;
 }
+/***********************cartelera-page***********************/
+#cartelera-main{
+    margin-bottom: 20px;
+    row-gap: 20px;
+}
+/***********************detalle-Pelicula***********************/
+.detallePeli{
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
 
+.detallePeli .trailer{
+    padding: 10px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.detallePeli .trailer iframe{
+    width: 100%;
+    height: auto;
+}
+.detallePeli .ficha{
+    font-size: 10px;
+}
+.detallePeli .ficha ul{
+    list-style: none;
+}
+.detallePeli .ficha li{
+    padding: 5px;
+}
+.detallePeli .ficha .btncomprar{
+    width: 30%;
+    text-decoration: none;
+    font-size: 11px;
+    margin: 0 auto;
+    text-align: center;
+}
 
 
 /* -----------formulario nosotros----------- */
@@ -1004,7 +1036,6 @@ span {
         height: 380px;
     }
     .info {
-        grid-template-columns: 1fr 2fr;
         font-size: 12px;
     }
 
@@ -1012,9 +1043,6 @@ span {
         height: 60%;
     }
 
-    #footerCompra {
-        margin-top: 10px;
-    }
 
     /* -------nosotros-------- */
     /* .cont-ppal {
@@ -1165,6 +1193,10 @@ span {
         grid-template-columns: 1fr 1fr;
         justify-items: center;
         margin: 0px auto;
+    }
+    /***********************compra***********************/
+    .datos{
+        grid-template-columns: 65%;
     }
 }
 
@@ -1318,20 +1350,25 @@ span {
 
     /****************compra********************/
 
-    .info .caratula img {
+    /* .info .caratula img {
         width: 90%;
-    }
+    } */
     .info{
         font-size: 13px;
+    }
+    .info .detalles{
+        padding-right: 30px;
+        padding-left: 20px;
     }
     .info .detalles h2{
         font-size: 20px;
     }
-    /* .info .detalles,
-    .info .caratula {
-        padding-left: 0px;
-        padding-right: 0px;
-    } */
+    .datos{
+        grid-template-columns: 60%;
+    }
+    .datos .btncomprar{
+        width: 60%;
+    }
 
     /***********************estrenos***********************/
 
@@ -1345,8 +1382,8 @@ span {
     }
 
     .estrenos-figure img,
-    .cartelera img {
-        width: 250px;
+    .cartelera img, .info img {
+        width: 220px;
         height: 300px;
     }
 

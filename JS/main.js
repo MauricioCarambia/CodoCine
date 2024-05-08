@@ -41,7 +41,7 @@ function mostrarInfo(){
   let infoSinop = document.getElementById("sinopFilm");
   switch(pelicula){
     case "Film 1":
-      titulo.textContent = "Forest Gump";
+      titulo.textContent = "Forrest Gump";
       info.style.display = "grid";
       portadaImg.src = "/img/forest.jpg";
       infoGen.textContent = "Comedia, Drama, Romántico";
@@ -62,7 +62,7 @@ function mostrarInfo(){
       break;
     case "Film 3":
       info.style.display = "grid";
-      titulo.textContent = "Rapido Y Furioso";
+      titulo.textContent = "Rápido Y Furioso";
       portadaImg.src = "/img/rapido.webp";
       infoGen.textContent = "Acción, Crimen";
       infoDur.textContent = "1h 47min";
