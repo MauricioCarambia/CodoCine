@@ -1248,3 +1248,172 @@ span {
     outline: 0;
     border: 1px solid --botones-color;
 }
+
+/*detalles pelicula*/
+
+.caja-detalles{
+  
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid var(--botones-color);
+    
+    text-align: left;
+    margin: auto;
+    border-top: none;
+    border-bottom: none;
+    margin-bottom: 5rem;
+    padding: 1rem;
+    flex-direction: column;
+    
+    width: 80%;
+    
+
+}
+
+.caja-detalles .peliculaTitulo{
+
+display:-webkit-box;
+display:-ms-flexbox;
+display:flex;
+color:#ebebeb;
+-webkit-box-pack:start;
+-ms-flex-pack:start;
+justify-content:flex-start;
+-webkit-box-align:center;
+-ms-flex-align:center;
+align-items:center;
+
+}
+.caja-detalles .peliculaTitulo h2{
+    text-decoration: none;
+    font-size: 50px;
+    text-transform: uppercase;
+    
+}
+.caja-detalles .peliculaTitulo .logoPelicula{
+    background-color: var(--botones-color);
+    border-radius: 100%;
+    width:32x;
+    height:32px;
+    margin-right:5px;
+}
+.caja-contenidos .cajabtn{
+    grid-area: boton;
+    position: relative;
+    text-align: right;
+
+}
+.caja-contenidos .btnreserva{
+    
+    border-color: #FF2C1F;
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding:10px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: var(--botones-color);
+    color:white;
+    cursor: pointer;
+    font-weight: 700;
+    
+}
+.btnreserva:hover {
+    background-color: var(--fondo);
+    border: solid 1px;
+    font-weight: 900;
+    size-adjust: -1px;
+    
+}
+.tablaDetalles,
+.videoTrailer,
+.caja-detalles,
+.cajabtn{
+    padding: 20px;
+}
+.caja-contenidos .tablaDetalles{
+    grid-area: detalles;
+
+    
+}
+.caja-contenidos .tablaDetalles img{
+    max-width:330px;
+    height: 500px;
+    justify-content: center;
+    
+}
+.caja-contenidos .tablaDetalles ul{
+    padding-top: 20px;
+}
+.caja-contenidos .tablaDetalles ul li.line{
+    position: relative;
+    font-weight: 500;
+    margin-bottom: 5px ;
+}
+.caja-contenidos .tablaDetalles ul li.line span:first-child{
+    
+    text-align: left;
+}
+.caja-contenidos .tablaDetalles ul li.line span:last-child{
+    padding-left: 5px;
+    text-align: right;
+}
+
+.caja-contenidos .tablaDetalles ul li{
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    
+}
+.caja-contenidos .videoTrailer{
+    grid-area: trailer;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    
+    
+        
+}
+.caja-contenidos .videoTrailer iframe{
+    max-width: 100%;
+    max-height: 100%;
+    
+}
+.caja-contenidos .resumenPelicula{
+    grid-area: resumen;
+    margin-top: 5px;
+}
+.caja-contenidos .resumenPelicula h2{
+    font-size: 20px;
+    text-decoration: underline var(--botones-color);
+    padding-top: 5px;  
+    margin-left: 3rem;
+    
+}
+.caja-contenidos .resumenPelicula p{
+    margin-left: 3rem;
+    margin-top: 1rem;
+    text-indent: 20px;
+}
+.caja-contenidos{
+    display: grid;
+    border: none;
+    width: 100%;
+    height: max-content;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    margin: auto;
+    grid-template-areas:
+        "detalles trailer trailer trailer"
+        "detalles trailer trailer trailer"
+        "detalles resumen resumen resumen"
+        " . . .  boton"
+
+}
+
+
+
+
+  
