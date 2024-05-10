@@ -20,7 +20,7 @@
         <h3>Escríbenos y en breve los pondremos en contacto contigo</h3>
         <div class="contact_form">
           <div>
-            <form action="#" method="$" class="formulario">
+            <form action="#" method="post" class="formulario">
               <label for="nombre" class="formulario-label"
                 >Nombre
                 <span class="obligatorio">*</span>
@@ -30,7 +30,7 @@
                 type="text"
                 name="introducir_nombre"
                 id="nombre"
-                required="obligatorio"
+                required
                 placeholder="Escribe tu nombre" />
 
               <label for="email" class="formulario-label"
@@ -42,10 +42,10 @@
                 type="email"
                 name="introducir_email"
                 id="email"
-                required="obligatorio"
+                required
                 placeholder="Escribe tu Email" />
 
-              <label for="telefone" class="formulario-label">Teléfono </label>
+              <label for="telefono" class="formulario-label">Teléfono </label>
               <input
                 class="formulario-input"
                 type="tel"
@@ -54,16 +54,21 @@
                 placeholder="Escribe tu teléfono" />
 
               <label for="asunto" class="formulario-label"
-                >Asunto
+                >Motivo
                 <span class="obligatorio">*</span>
               </label>
-              <input
-                class="formulario-input"
-                type="text"
-                name="introducir_asunto"
-                id="assunto"
-                required="obligatorio"
-                placeholder="Escribe un asunto" />
+              <select name="asunto" id="asunto" class="formulario-input">
+                <option value="">Motivo de la consulta</option>
+                <option value="">Problema de promocion</option>
+                <option value="">Problema con la entrada</option>
+                <option value="">Problema de pago</option>
+              </select>
+
+              <label for="imagen" class="formulario-label"
+                >Imagen
+                <span class="obligatorio">*</span>
+              </label>
+              <input class="formulario-input" type="file" name="Cargar_imagen" id="imagen" required placeholder="Suba la foto" />
 
               <label for="mensaje" class="formulario-label"
                 >Mensaje
@@ -73,13 +78,10 @@
                 name="introducir_mensaje"
                 class="texto_mensaje form-textarea"
                 id="mensaje"
-                required="obligatorio"
+                required
                 placeholder="Deja aquí tu comentario..."></textarea>
-
-              <button class="formulario-input login" type="submit" name="enviar_formulario" id="enviar">
-                <p>Enviar</p>
-              </button>
-
+              <label for="copia"> <input type="checkbox" id="copia" />Enviar una copia a mi Email</label>
+              <button class="formulario-input login" type="submit" name="enviar_formulario" id="enviar">Enviar</button>
               <p class="aviso"><span class="obligatorio"> * </span>los campos son obligatorios.</p>
             </form>
           </div>
