@@ -144,6 +144,10 @@ nav {
     margin: 50px auto;
 }
 
+.sesion p {
+    text-align: center;
+}
+
 .formulario {
     display: flex;
     flex-direction: column;
@@ -154,16 +158,17 @@ nav {
     text-transform: uppercase;
     font-size: 1.2rem;
     font-weight: 700;
+    padding-top: 10px;
 }
 
 .formulario .formulario-input {
     width: 100%;
     padding: 8px 0;
-    margin-bottom: 20px;
     border: none;
     background-color: var(--fondo);
     border-bottom: 1px solid var(--botones-color);
     color: var(--texto);
+    font-size: 1.2rem;
 
 }
 
@@ -230,9 +235,8 @@ nav {
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
-    padding: 50px 80px;
     margin: 0px auto;
-    width: 100%;
+    width: 80%;
 }
 
 /*******************precios***********************/
@@ -566,17 +570,17 @@ footer p {
     margin: 0;
     padding: 0;
     position: absolute;
-    bottom: 2%;
+    bottom: 4%;
     left: 0;
     right: 0;
     text-align: center;
     z-index: 0;
 }
 
-.slide-indicador li {
+/* .slide-indicador li {
     display: inline-block;
     margin: 0 5px;
-}
+} */
 
 .slide-circulo {
     color: #828282;
@@ -595,16 +599,17 @@ footer p {
     color: #428bca;
 }
 
+
 .btncomprar {
-    display: block;
     background-color: var(--botones-color);
+    margin-bottom: 50px;
     padding: 10px 20px;
     color: var(--texto);
     border: none;
     border-radius: 10px;
-    font-size: 1rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .btncomprar:hover {
@@ -819,38 +824,35 @@ footer p {
 
 .cont-ppal {
     display: grid;
-    grid-template-areas: 'mapas'
-        'formulario';
+    grid-template-areas: 1fr;
 
 }
 
-.contenedor-mapas {
-    grid-area: mapas;
-}
 
 .descripcion-mapas {
-    /* border: 3px solid blue; */
-    /* width: 800px; */
+
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
-    grid-area: mapas;
-}
-
-.descripcion-mapas p {
-    height: fit-content;
     width: 80%;
-    /* padding: 20px; */
     margin-left: 50px;
 }
 
+.mapas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px 0px;
+}
+
 .mapa-chico {
-    border: 3px solid var(--botones-color);
+    border: 2px solid var(--botones-color);
     border-radius: 10px;
     text-align: center;
-    margin: 2rem;
-    padding: 2rem;
+    margin: 10px;
+    padding: 10px;
 }
 
 /***********************cartelera-page***********************/
@@ -903,34 +905,15 @@ footer p {
 }
 
 .contact_form {
-    /* border: 3px solid blue; */
-    width: 460px;
+    width: 80%;
     height: auto;
     margin: 20px auto;
     border-radius: 10px;
-    /* padding-top: 30px; */
-    /* padding-bottom: 20px; */
     background-color: var(--fondo);
-    /* padding-left: 30px; */
     grid-area: formu;
     font-size: 1.2rem;
     font-weight: 700;
 }
-
-/* 
-.form-input {
-    background-color: var(--texto);
-    width: 408px;
-    height: 40px;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: var(--texto);
-    margin-top: 10px;
-    padding-left: 10px;
-    margin-bottom: 20px;
-} */
-
 
 .form-textarea {
     width: 100%;
@@ -943,36 +926,15 @@ footer p {
     resize: vertical;
 }
 
-span {
+.formulario .aviso {
     color: var(--texto);
+    text-align: center;
 }
 
-
-.aviso {
-    font-size: 13px;
-    color: var(--texto);
+.formulario p {
+    color: var(--botones-color);
 }
 
-::-webkit-input-placeholder {
-    color: #a8a8a8;
-}
-
-
-::-webkit-textarea-placeholder {
-    color: #a8a8a8;
-}
-
-
-/* .formulario input:focus {
-    outline: 0;
-    border: 1px solid var(--botones-color);
-} */
-
-
-/* .formulario textarea:focus {
-    outline: 0;
-    border: 1px solid --botones-color;
-} */
 
 @media only screen and (min-width: 768px) {
 
@@ -1035,29 +997,7 @@ span {
         height: 60%;
     }
 
-    .mapas {
-        /* border: 3px solid blue; */
-        /* width: 800px; */
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-evenly;
-        grid-area: mapas;
-    }
 
-    .mapas p {
-        height: 350px;
-        width: 80%;
-        /* padding: 20px; */
-        margin-left: 50px;
-    }
-
-    .mapa-chico {
-        /* border: 3px solid blue; */
-        text-align: center;
-        margin: 1rem;
-        padding: 1rem;
-    }
 
 
 
@@ -1074,13 +1014,6 @@ span {
         margin: 50px auto;
     }
 
-    .registrar {
-        display: grid;
-        grid-template-columns: 1fr;
-        justify-content: center;
-        padding: 50px 200px;
-
-    }
 
 
     /*******************precios***********************/
@@ -1242,12 +1175,7 @@ span {
 
     /*****************registrar****************/
     .registrar {
-        display: grid;
-        grid-template-columns: 1fr;
-        justify-content: center;
-        padding: 50px 200px;
-        margin: 0px auto;
-        width: 80%;
+        max-width: 1000px;
     }
 
 
@@ -1315,15 +1243,17 @@ span {
         margin-right: 20px;
     }
 
-
     .slide-inner {
         height: 700px;
-
     }
 
     .slide-item img {
         height: 700px;
+    }
 
+
+    .btncomprar {
+        font-size: 1rem;
     }
 
     /****************compra********************/
@@ -1392,7 +1322,8 @@ span {
 
     .contact_form {
         /* border: 3px solid blue; */
-        width: 460px;
+        width: 80%;
+        max-width: 1000px;
         height: auto;
         margin: 20px auto;
         border-radius: 10px;
