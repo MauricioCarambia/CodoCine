@@ -16,23 +16,34 @@
     <header id="idHeader"></header>
     <main>
       <h2 class="difuminado">Crear nuevo usuario</h2>
-      <div class="registrar">
-        <form class="formulario" action="#">
+      <section class="registrar">
+        <form action="#" method="#" id="formulario" onsubmit="return validarRegistro()" class="formulario">
           <label class="formulario-label" for="nombre">Nombre</label>
-          <input class="formulario-input" type="text" id="nombre" placeholder="Nombre" required />
+          <p id="errorNombre"></p>
+          <input class="formulario-input" type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre" />
+
           <label class="formulario-label" for="apellido">Apellido</label>
-          <input class="formulario-input" type="text" id="apellido" placeholder="Apellido" required />
-          <label class="formulario-label" for="mail">Email</label>
-          <input class="formulario-input" type="email" id="mail" placeholder="Email" required />
+          <p id="errorApellido"></p>
+          <input class="formulario-input" name="apellido" type="text" id="apellido" placeholder="Apellido" />
+
+          <label class="formulario-label" for="email">Email</label>
+          <p id="errorEmail"></p>
+          <input class="formulario-input" name="email" type="email" id="email" placeholder="Email" />
+
           <label class="formulario-label" for="pass">Contraseña</label>
-          <input class="formulario-input" type="password" id="pass" placeholder="Contraseña" required />
+          <p id="errorPass"></p>
+          <input class="formulario-input" name="pass" type="password" id="pass" placeholder="Contraseña" />
+
           <label class="formulario-label" for="pass_confirm">Confirma Contraseña</label>
-          <input class="formulario-input" type="password" id="pass_confirm" placeholder="Contraseña" required />
+          <p id="errorConfPass"></p>
+          <input class="formulario-input" name="pass_confirm" type="password" id="pass_confirm" placeholder="Contraseña" />
+
           <label class="formulario-label" for="celular">Celular</label>
-          <input class="formulario-input" type="number" id="celular" placeholder="Celular" />
-          <label class="formulario-label" for="fecNac">Fecha de Nacimiento</label>
-          <input class="formulario-input" type="date" id="fecNac" />
+          <p id="errorCelular"></p>
+          <input class="formulario-input" name="celular" type="number" id="celular" placeholder="Celular" />
+
           <label class="formulario-label" for="genero">Genero</label>
+          <p id="errorGenero"></p>
           <select class="formulario-input" name="genero" id="genero">
             <option value="">Selecciona una opcion</option>
             <option value="masculino">Masculino</option>
@@ -40,15 +51,23 @@
             <option value="otro">Otro</option>
             <option value="noindica">Prefieron no indicar</option>
           </select>
-          <label for="prom"> <input type="checkbox" id="prom" />¿Desea recibir emails con promociones y estrenos?</label>
-          <input class="formulario-input login" type="submit" value="Registrarse" />
+
+          <label class="formulario-label" for="fecnac">Fecha de Nacimiento</label>
+          <p id="errorNac"></p>
+          <input class="formulario-input" name="fecnac" type="date" id="fecnac" />
+
+          <label for="prom">
+            <input type="checkbox" name="prom" id="prom" />¿Desea recibir emails con promociones y estrenos?</label
+          >
+          <button class="formulario-input login" type="submit" id="enviar">Enviar</button>
         </form>
-      </div>
+      </section>
     </main>
 
     <footer id="idFooter"></footer>
     <script src="JS/footer.js"></script>
     <script src="JS/header.js"></script>
+    <script src="JS/validacion.js"></script>
     <script src="JS/main.js"></script>
   </body>
 </html>
