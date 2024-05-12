@@ -28,6 +28,9 @@ body {
     color: var(--texto);
 }
 
+.cerrar-menu {
+    color: var(--botones-color);
+}
 
 
 header {
@@ -137,8 +140,12 @@ nav {
 .sesion {
     display: grid;
     grid-template-columns: 1fr;
-    justify-content: center;
-    margin: 50px 50px;
+    justify-items: center;
+    margin: 50px auto;
+}
+
+.sesion p {
+    text-align: center;
 }
 
 .formulario {
@@ -149,15 +156,20 @@ nav {
 
 .formulario .formulario-label {
     text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding-top: 10px;
 }
 
 .formulario .formulario-input {
+    width: 100%;
     padding: 8px 0;
-    margin-bottom: 20px;
     border: none;
     background-color: var(--fondo);
     border-bottom: 1px solid var(--botones-color);
     color: var(--texto);
+    font-size: 1.2rem;
+
 }
 
 .formulario .formulario-input:focus {
@@ -171,6 +183,10 @@ nav {
     text-transform: uppercase;
     color: var(--texto);
     margin-top: 20px;
+    width: 40%;
+    margin: 20px auto;
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
 .formulario .login:hover {
@@ -219,7 +235,8 @@ nav {
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
-    padding: 50px 80px;
+    margin: 0px auto;
+    width: 80%;
 }
 
 /*******************precios***********************/
@@ -297,14 +314,14 @@ figure.snip1206 p {
 }
 
 figure.snip1206 h2 {
-    padding: 10px 30px;
+    padding: 0px 30px;
     display: inline-block;
     font-weight: 400;
     text-transform: uppercase;
 }
 
 figure.snip1206 p {
-    padding: 5px 50px;
+    padding: 0px 50px;
     font-size: 1em;
     font-weight: 500;
 }
@@ -340,9 +357,9 @@ figure.snip1206.hover figcaption p {
 /***************difuminado*************/
 
 .difuminado {
-    width: 300px;
+    width: 80%;
     padding: 20px;
-    margin-left: 50px;
+    /* margin-left: 50px; */
     background-color: linear-gradient(to right, #FF2C1F, transparent);
 
 }
@@ -486,7 +503,7 @@ footer p {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 300px;
+    height: 100%;
     margin: auto;
 }
 
@@ -504,7 +521,7 @@ footer p {
 
 .slide-item img {
     display: block;
-    height: 300px;
+    height: 100%;
     width: 100%;
     contain: content;
 }
@@ -553,17 +570,17 @@ footer p {
     margin: 0;
     padding: 0;
     position: absolute;
-    bottom: 2%;
+    bottom: 4%;
     left: 0;
     right: 0;
     text-align: center;
     z-index: 0;
 }
 
-.slide-indicador li {
+/* .slide-indicador li {
     display: inline-block;
     margin: 0 5px;
-}
+} */
 
 .slide-circulo {
     color: #828282;
@@ -583,17 +600,16 @@ footer p {
 }
 
 
-
 .btncomprar {
-    display: block;
     background-color: var(--botones-color);
+    margin-bottom: 50px;
     padding: 10px 20px;
     color: var(--texto);
     border: none;
     border-radius: 10px;
-    font-size: 1rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .btncomprar:hover {
@@ -620,11 +636,20 @@ footer p {
 }
 
 .form-busqueda .form-input {
-    padding: 10px;
     font-size: 1.5rem;
-    border-radius: 10px;
-    width: 90%;
+    width: 70%;
+
+    border: none;
+    background-color: var(--fondo);
+    border-bottom: 1px solid var(--botones-color);
+    color: var(--texto);
 }
+
+.form-busqueda .form-input:focus {
+    outline: none;
+
+}
+
 
 .form-busqueda .form-input.btnbuscar {
     padding: 10px 20px;
@@ -658,14 +683,18 @@ footer p {
 }
 
 .estrenos-figure img,
-.cartelera img {
+.cartelera img,
+.info img,
+.detallePeli img {
     width: 180px;
     height: 270px;
+    border-radius: 10px;
 }
 
 .estrenos-figure img:hover,
 .cartelera img:hover {
     transform: scale(1.05);
+    filter: drop-shadow(0px 0px 10px var(--botones-color));
 }
 
 .estrenos-figure a,
@@ -701,6 +730,211 @@ footer p {
     padding: 10px 0;
 }
 
+/***********Compra****************************************************/
+.disable {
+    background-color: #222222;
+    color: #828282;
+}
+
+.disable:hover {
+    background-color: #414040;
+    color: black;
+    border: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.compra {
+    display: grid;
+    grid-row-gap: 25px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.info {
+    display: none;
+    grid-template-columns: auto 1fr;
+    width: 100%;
+    font-size: 10px;
+}
+
+.info .detalles,
+.info .caratula {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.info .detalles h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.info .detalles ul {
+    /* margin-top: 20px; */
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+.info .bolder {
+    font-weight: bolder;
+}
+
+/* .info .caratula img {
+    width: 100%;
+    height: auto;
+} */
+
+.datos {
+    width: 100%;
+    display: grid;
+    /* border: 2px crimson solid; */
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 70%;
+    grid-gap: 35px;
+    justify-content: center;
+}
+
+.select .btncomprar {
+    text-align: center;
+    cursor: pointer;
+    width: 70%;
+    margin: 0 auto;
+    text-decoration: none;
+}
+
+.select select {
+    height: 100%;
+    width: 100%;
+    /* margin-top: 5%; */
+    background-color: black;
+    color: #fff;
+    border-radius: 8px;
+    border-color: #FF2C1F;
+    text-indent: 2px;
+
+}
+
+.select select:focus {
+    border-color: #FF2C1F;
+}
+
+/* -------nosotros-------- */
+
+.cont-ppal {
+    display: grid;
+    grid-template-areas: 1fr;
+
+}
+
+
+.descripcion-mapas {
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 80%;
+    margin-left: 50px;
+}
+
+.mapas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px 0px;
+}
+
+.mapa-chico {
+    border: 2px solid var(--botones-color);
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+/***********************cartelera-page***********************/
+#cartelera-main {
+    margin-bottom: 20px;
+    row-gap: 20px;
+}
+
+/***********************detalle-Pelicula***********************/
+.detallePeli {
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.detallePeli .trailer {
+    padding: 10px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.detallePeli .trailer iframe {
+    width: 100%;
+    height: auto;
+}
+
+.detallePeli .ficha {
+    font-size: 10px;
+}
+
+.detallePeli .ficha ul {
+    list-style: none;
+}
+
+.detallePeli .ficha li {
+    padding: 5px;
+}
+
+.detallePeli .ficha .btncomprar {
+    width: 30%;
+    text-decoration: none;
+    font-size: 11px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+/* -----------formulario nosotros----------- */
+.contacto h3 {
+    margin: 20px 50px;
+}
+
+.contact_form {
+    width: 80%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 10px;
+    background-color: var(--fondo);
+    grid-area: formu;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.form-textarea {
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    padding-top: 15px;
+    resize: vertical;
+}
+
+.formulario .aviso {
+    color: var(--texto);
+    text-align: center;
+}
+
+.formulario p {
+    color: var(--botones-color);
+}
+
 
 @media only screen and (min-width: 768px) {
 
@@ -708,7 +942,7 @@ footer p {
     /***************difuminado*************/
 
     .difuminado {
-        width: 600px;
+        width: 100%;
     }
 
     /*****************footer**************/
@@ -740,46 +974,32 @@ footer p {
 
     }
 
-    /* -------nosotros-------- */
-    .cont-ppal {
-        /* border: 3px solid blue; */
-        /* grid-template-rows: 1fr 1fr 1fr; */
-        /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
+
+
+
+    /*************compra****************************/
+    .compra {
+        grid-template-columns: 1fr 2fr;
+        height: auto;
+        margin-top: 20px;
+
     }
 
-    .contenedor-mapas {}
-
-    .mapas {
-        /* border: 3px solid blue; */
-        /* width: 800px; */
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-evenly;
-        grid-area: mapas;
+    .datos {
+        height: 380px;
     }
 
-    .mapas p {
-        height: 350px;
-        width: 80%;
-        /* padding: 20px; */
-        margin-left: 50px;
+    .info {
+        font-size: 12px;
     }
 
-    .mapa-chico {
-        /* border: 3px solid blue; */
-        text-align: center;
-        margin: 1rem;
-        padding: 1rem;
+    .select select {
+        height: 60%;
     }
 
-    .formulario {
-        align-items: center;
-        text-align: center;
-    }
+
+
+
 
 }
 
@@ -794,13 +1014,6 @@ footer p {
         margin: 50px auto;
     }
 
-    .registrar {
-        display: grid;
-        grid-template-columns: 1fr;
-        justify-content: center;
-        padding: 50px 200px;
-
-    }
 
 
     /*******************precios***********************/
@@ -859,17 +1072,7 @@ footer p {
     /*******************inicio*****************/
 
 
-    .slide-inner {
 
-        height: 400px;
-
-    }
-
-    .slide-item img {
-
-        height: 400px;
-
-    }
 
     /***********************estrenos***********************/
     .estrenos,
@@ -896,23 +1099,9 @@ footer p {
         margin: 0px auto;
     }
 
-    .cont-ppal{
-        /* border: 3px solid red; */
-        display: grid;
-        grid-template-columns: auto auto;
-        justify-content: baseline;
-        align-content: center;
-        grid-template-areas: 'mapas' 'fromulario'
-        'mapas' 'formulario';
-    }
-
-    .descripcion-mapas p{
-        /* border: 3px solid red; */
-        /* max-height: 350px; */
-        max-width: fit-content;
-    }
-    .formulario{
-
+    /***********************compra***********************/
+    .datos {
+        grid-template-columns: 65%;
     }
 }
 
@@ -928,6 +1117,7 @@ footer p {
         background-color: var(--fondo);
         width: 100%;
         margin: 0;
+
     }
 
     .nav {
@@ -985,12 +1175,9 @@ footer p {
 
     /*****************registrar****************/
     .registrar {
-        display: grid;
-        grid-template-columns: 1fr;
-        justify-content: center;
-        padding: 50px 300px;
-
+        max-width: 1000px;
     }
+
 
 
     /*******************precios***********************/
@@ -1036,7 +1223,7 @@ footer p {
 
 
     .footer-principal {
-        font-size: 1.5rem;
+        font-size: 1rem;
         grid-template-areas: "preguntas redes"
             "p p";
 
@@ -1057,9 +1244,42 @@ footer p {
     }
 
     .slide-inner {
+        height: 700px;
+    }
 
-        width: 80%;
+    .slide-item img {
+        height: 700px;
+    }
 
+
+    .btncomprar {
+        font-size: 1rem;
+    }
+
+    /****************compra********************/
+
+    /* .info .caratula img {
+        width: 90%;
+    } */
+    .info {
+        font-size: 13px;
+    }
+
+    .info .detalles {
+        padding-right: 30px;
+        padding-left: 20px;
+    }
+
+    .info .detalles h2 {
+        font-size: 20px;
+    }
+
+    .datos {
+        grid-template-columns: 60%;
+    }
+
+    .datos .btncomprar {
+        width: 60%;
     }
 
     /***********************estrenos***********************/
@@ -1074,9 +1294,11 @@ footer p {
     }
 
     .estrenos-figure img,
-    .cartelera img {
-        width: 250px;
+    .cartelera img,
+    .info img {
+        width: 220px;
         height: 300px;
+        padding: 0px 10px;
     }
 
     .promos {
@@ -1094,154 +1316,25 @@ footer p {
         width: 350px;
     }
 
-}
+    .contacto h3 {
+        margin: 20px 400px;
+    }
 
-/* -------nosotros-------- */
-.cont-ppal {
-    /* border: 3px solid blue;
-    display: grid;
-    grid-template-columns: 1fr 1fr; */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    display: grid;
-    grid-template-areas: 'mapas'
-    'formulario';
-
-}
-
-.contenedor-mapas {
-    grid-area: mapas;
-}
-
-.descripcion-mapas {
-    /* border: 3px solid blue; */
-    /* width: 800px; */
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-evenly;
-    grid-area: mapas;
-}
-
-.descripcion-mapas p {
-    height: fit-content;
-    width: 80%;
-    /* padding: 20px; */
-    margin-left: 50px;
-}
-
-.mapa-chico {
-    border: 3px solid var(--botones-color);
-    border-radius: 10px;
-    text-align: center;
-    margin: 2rem;
-    padding: 2rem;
-}
-
-.formulario {
-    align-items: center;
-    text-align: center;
-}
-
-
-/* -----------formulario nosotros----------- */
-
-.contact_form {
-    /* border: 3px solid blue; */
-    width: 460px;
-    height: auto;
-    margin: 20px auto;
-    border-radius: 10px;
-    /* padding-top: 30px; */
-    /* padding-bottom: 20px; */
-    background-color: var(--fondo);
-    /* padding-left: 30px; */
-    grid-area: formu;
-}
-
-
-.form-input {
-    background-color: var(--texto);
-    width: 408px;
-    height: 40px;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: var(--texto);
-    margin-top: 10px;
-    padding-left: 10px;
-    margin-bottom: 20px;
-}
-
-
-.form-textarea {
-    background-color: var(--texto);
-    width: 405px;
-    height: 150px;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: var(--texto);
-    margin-top: 10px;
-    padding-left: 10px;
-    margin-bottom: 20px;
-    padding-top: 15px;
-}
-
-
-.form-label {
-    display: block;
-    float: center;
-}
-
-
-.form-button {
-    height: 45px;
-    padding-left: 5px;
-    padding-right: 5px;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    text-transform: uppercase;
-    background-color: var(--fondo);
-    border-color: var(--botones-color);
-    border-style: solid;
-    border-radius: 10px;
-    width: 420px;
-    cursor: pointer;
-}
-
-
-.form-button p {
-    color: #fff;
-}
-
-
-span {
-    color: var(--texto);
-}
-
-
-.aviso {
-    font-size: 13px;
-    color: var(--texto);
-}
-
-::-webkit-input-placeholder {
-    color: #a8a8a8;
-}
-
-
-::-webkit-textarea-placeholder {
-    color: #a8a8a8;
-}
-
-
-.formulario input:focus {
-    outline: 0;
-    border: 1px solid var(--botones-color);
-}
+    .contact_form {
+        /* border: 3px solid blue; */
+        width: 80%;
+        max-width: 1000px;
+        height: auto;
+        margin: 20px auto;
+        border-radius: 10px;
+        /* padding-top: 30px; */
+        /* padding-bottom: 20px; */
+        background-color: var(--fondo);
+        /* padding-left: 30px; */
+        grid-area: formu;
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
 
 
 .formulario textarea:focus {
@@ -1411,3 +1504,6 @@ align-items:center;
         "detalles resumen resumen resumen"
         " . . .  boton"
 }
+
+}
+

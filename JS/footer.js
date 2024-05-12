@@ -1,0 +1,55 @@
+let footer = `<div class="footer-principal">
+<div class="preguntas">
+  <h3>Mapa del Sitio</h3>
+  <ul>
+    <li class="mapa">
+      <a href="contacto.html">Preguntas Frecuentes</a>
+    </li>
+    <li class="mapa">
+      <a href="contacto.html">Politicas de Reembolso</a>
+    </li>
+    <li class="mapa">
+      <a href="index.html">Inicio</a>
+    </li>
+    <li class="mapa">
+      <a href="cartelera.html">Cartelera</a>
+    </li>
+    <li class="mapa">
+      <a href="compra.html">Compra Entrada</a>
+    </li>
+    <li class="mapa">
+      <a href="precio.html">Precios y Cines</a>
+    </li>
+    <li class="mapa">
+      <a href="nosotros.html">Nosotros</a>
+    </li>
+    <li class="mapa">
+      <a href="contacto.html">Contactanos</a>
+    </li>
+    <li class="mapa">
+      <a href="sesion.html">Cuenta</a>
+    </li>
+  </ul>
+</div>
+<div class="redes">
+  <p>Seguinos</p>
+  <a href="#" target="_blank">
+    <img src="img/whatsapp.svg" alt="red whatsapp" />
+  </a>
+  <a href="https://www.facebook.com/" target="_blank">
+    <img src="img/facebook.svg" alt="red facebook" />
+  </a>
+  <a href="https://www.instagram.com/" target="_blank">
+    <img src="img/instagram.svg" alt="red instagram" />
+  </a>
+  <a href="https://twitter.com/" target="_blank">
+    <img src="img/x.svg" alt="red x" />
+  </a>
+  <a href="https://www.youtube.com/" target="_blank">
+    <img src="img/youtube.svg" alt="red youtube" />
+  </a>
+</div>
+</div>
+<p>© 2024 Todos los derechos reservados</p>`;
+
+document.getElementById("idFooter").innerHTML = footer;

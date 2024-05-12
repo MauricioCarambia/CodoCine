@@ -13,86 +13,52 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   </head>
   <body>
-    <header>
-      <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
-      <nav class="nav" id="nav">
-        <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i></button>
-        <div class="navLogo">
-          <a href="index.html"><img class="logo" src="img/logoCine.png" alt="logo cine" /></a>
-          <h1>Codo Cinema</h1>
-        </div>
-        <ul class="nav-list">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="cartelera.html">Cartelera</a></li>
-          <li><a href="compra.html">Comprar Entrada</a></li>
-          <li><a href="precio.html">Precios y Salas</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-        <div class="navLogin">
-          <a href="sesion.html"> <img class="login-icon" src="img/login.png" alt="logo inicio sesion" /> Iniciar Sesion</a>
-        </div>
-      </nav>
-    </header>
+    <header id="idHeader"></header>
     <main>
-      <section class="formulario">
+      <h2 class="difuminado">Formulario de Contacto</h2>
+      <section class="contacto">
+        <h3>Escríbenos y en breve los pondremos en contacto contigo</h3>
         <div class="contact_form">
-          <div class="formulario">
-            <h1 class="difuminado">Formulario de Contacto</h1>
-            <h3>Escríbenos y en breve los pondremos en contacto contigo</h3>
+          <form action="#" method="post" id="formulario" onsubmit="return validarFormulario()" class="formulario">
+            <label for="nombre" class="formulario-label">Nombre </label>
+            <p id="errorNombre"></p>
+            <input class="formulario-input" type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre" />
 
+            <label for="email" class="formulario-label">Email </label>
+            <p id="errorEmail"></p>
+            <input class="formulario-input" type="email" name="email" id="email" placeholder="Escribe tu Email" />
 
-            <form action="index.html" method="post">
+            <label for="telefono" class="formulario-label">Teléfono </label>
+            <p id="errorTelefono"></p>
+            <input class="formulario-input" type="tel" name="telefono" id="telefono" placeholder="Escribe tu teléfono" />
 
+            <label for="motivo" class="formulario-label">Motivo </label>
+            <p id="errorMotivo"></p>
+            <select name="motivo" id="motivo" class="formulario-input">
+              <option value="">Motivo de la consulta</option>
+              <option value="opcion1">Problema de promocion</option>
+              <option value="opcion2">Problema con la entrada</option>
+              <option value="opcion3">Problema de pago</option>
+            </select>
 
-              <p>
-                <label for="nombre" class="colocar_nombre form-label">Nombre
-                  <span class="obligatorio">*</span>
-                </label>
-                <input class="form-input" type="text" name="introducir_nombre" id="nombre" required="obligatorio"
-                  placeholder="Escribe tu nombre">
-              </p>
+            <label for="imagen" class="formulario-label">Imagen </label>
+            <p id="errorImagen"></p>
+            <input class="formulario-input" type="file" name="imagen" id="imagen" placeholder="Suba la foto" />
 
-              <p>
-                <label for="email" class="colocar_email form-label">Email
-                  <span class="obligatorio">*</span>
-                </label>
-                <input class="form-input" type="email" name="introducir_email" id="email" required="obligatorio"
-                  placeholder="Escribe tu Email">
-              </p>
+            <label for="mensaje" class="formulario-label">Mensaje </label>
+            <p id="errorMensaje"></p>
+            <textarea
+              name="mensaje"
+              class="texto_mensaje form-textarea"
+              id="mensaje"
+              placeholder="Deja aquí tu comentario..."></textarea>
 
-              <p>
-                <label for="telefone" class="colocar_telefono form-label">Teléfono
-                </label>
-                <input class="form-input" type="tel" name="introducir_telefono" id="telefono" placeholder="Escribe tu teléfono">
-              </p>
+            <label for="copia"> <input type="checkbox" name="copia" id="copia" />Enviar una copia a mi Email</label>
 
-              <p>
-                <label for="asunto" class="colocar_asunto form-label">Asunto
-                  <span class="obligatorio">*</span>
-                </label>
-                <input class="form-input" type="text" name="introducir_asunto" id="assunto" required="obligatorio"
-                  placeholder="Escribe un asunto">
-              </p>
+            <button class="formulario-input login" type="submit" id="enviar">Enviar</button>
 
-              <p>
-                <label for="mensaje" class="colocar_mensaje form-label">Mensaje
-                  <span class="obligatorio">*</span>
-                </label>
-                <textarea name="introducir_mensaje" class="texto_mensaje form-textarea" id="mensaje" required="obligatorio"
-                  placeholder="Deja aquí tu comentario..."></textarea>
-              </p>
-
-              <button class="form-button formulario-input login" type="submit" name="enviar_formulario" id="enviar">
-                <p>Enviar</p>
-              </button>
-
-              <p class="aviso">
-                <span class="obligatorio"> * </span>los campos son obligatorios.
-              </p>
-
-            </form>
-          </div>
+            <p class="aviso">* los campos son obligatorios.</p>
+          </form>
         </div>
       </section>
       <div class="dudas-contenedor">
@@ -217,61 +183,10 @@
       </div>
     </main>
 
-    <footer>
-      <div class="footer-principal">
-        <div class="preguntas">
-          <h3>Mapa del Sitio</h3>
-          <ul>
-            <li class="mapa">
-              <a href="contacto.html">Preguntas Frecuentes</a>
-            </li>
-            <li class="mapa">
-              <a href="contacto.html">Politicas de Reembolso</a>
-            </li>
-            <li class="mapa">
-              <a href="index.html">Inicio</a>
-            </li>
-            <li class="mapa">
-              <a href="cartelera.html">Cartelera</a>
-            </li>
-            <li class="mapa">
-              <a href="compra.html">Compra Entrada</a>
-            </li>
-            <li class="mapa">
-              <a href="precio.html">Precios y Cines</a>
-            </li>
-            <li class="mapa">
-              <a href="nosotros.html">Nosotros</a>
-            </li>
-            <li class="mapa">
-              <a href="contacto.html">Contactanos</a>
-            </li>
-            <li class="mapa">
-              <a href="sesion.html">Cuenta</a>
-            </li>
-          </ul>
-        </div>
-        <div class="redes">
-          <p>Seguinos</p>
-          <a href="#" target="_blank">
-            <img src="img/whatsapp.svg" alt="red whatsapp" />
-          </a>
-          <a href="https://www.facebook.com/" target="_blank">
-            <img src="img/facebook.svg" alt="red facebook" />
-          </a>
-          <a href="https://www.instagram.com/" target="_blank">
-            <img src="img/instagram.svg" alt="red instagram" />
-          </a>
-          <a href="https://twitter.com/" target="_blank">
-            <img src="img/x.svg" alt="red x" />
-          </a>
-          <a href="https://www.youtube.com/" target="_blank">
-            <img src="img/youtube.svg" alt="red youtube" />
-          </a>
-        </div>
-      </div>
-      <p>© 2024 Todos los derechos reservados</p>
-    </footer>
+    <footer id="idFooter"></footer>
+    <script src="JS/footer.js"></script>
+    <script src="JS/header.js"></script>
+    <script src="JS/validacion.js"></script>
     <script src="JS/main.js"></script>
   </body>
 </html>
