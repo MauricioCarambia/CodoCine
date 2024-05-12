@@ -820,7 +820,7 @@ footer p {
 
 .cont-ppal {
     display: grid;
-    grid-template-areas: 1fr;
+    grid-template-columns: 1fr;
 
 }
 
