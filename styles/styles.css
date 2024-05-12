@@ -35,9 +35,7 @@ body {
 
 header {
     display: flex;
-    margin-left: 10px;
     background-color: var(--fondo);
-
 }
 
 
@@ -75,7 +73,6 @@ nav {
 
 .nav-list li {
     padding: 20px 0;
-
 }
 
 .nav-list li a {
@@ -89,18 +86,17 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 10px;
+    justify-content: center;
 }
 
 .logo {
-    width: 90px;
+    width: 60px;
     filter: invert(100%);
 }
 
 .nav-list li:hover {
     border-bottom: 2px solid var(--botones-color);
     border-top: 2px solid var(--botones-color);
-    transform: scale(1.2);
 }
 
 .navLogin {
@@ -862,41 +858,151 @@ footer p {
 }
 
 /***********************detalle-Pelicula***********************/
-.detallePeli {
+.caja-detalles {
+
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "tituloPelicula"
+        "detalles"
+        "trailer"
+        "resumen";
+    justify-items: center;
+    align-items: center;
+    width: 90%;
+    margin: 0px auto;
 }
 
-.detallePeli .trailer {
-    padding: 10px;
-    grid-column-start: 1;
-    grid-column-end: 3;
+.caja-detalles .peliculaTitulo {
+    grid-area: tituloPelicula;
+    display: flex;
+    color: var(--texto);
+    justify-content: center;
+    align-items: center;
+
 }
 
-.detallePeli .trailer iframe {
-    width: 100%;
-    height: auto;
+.caja-detalles .peliculaTitulo h2 {
+    font-size: 2em;
+    text-transform: uppercase;
+
 }
 
-.detallePeli .ficha {
-    font-size: 10px;
+.caja-detalles .peliculaTitulo .logoPelicula {
+    filter: invert(100%);
+    width: 50px;
 }
 
-.detallePeli .ficha ul {
-    list-style: none;
+
+
+.caja-detalles a {
+
+    background-color: var(--botones-color);
+    border-radius: 10px;
+    text-transform: uppercase;
+    color: var(--texto);
+    padding: 15px 10px;
+    margin: 30px auto;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+
 }
 
-.detallePeli .ficha li {
-    padding: 5px;
-}
-
-.detallePeli .ficha .btncomprar {
-    width: 30%;
+.tablaDetalles a {
     text-decoration: none;
-    font-size: 11px;
-    margin: 0 auto;
-    text-align: center;
+
 }
+
+.caja-detalles a:hover {
+    background-color: var(--fondo);
+    border: 2px solid var(--botones-color);
+
+}
+
+.tablaDetalles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 350px;
+    text-align: center;
+    grid-area: detalles;
+
+}
+
+.tablaDetalles img {
+    max-width: 350px;
+    width: 350px;
+    height: 500px;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.tablaDetalles ul {
+    padding-top: 20px;
+}
+
+.tablaDetalles ul li .line {
+    margin-bottom: 5px;
+}
+
+.tablaDetalles ul li.line span:first-child {
+
+    text-align: left;
+}
+
+.tablaDetalles ul li.line span:last-child {
+    text-align: right;
+}
+
+.tablaDetalles ul li {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+
+}
+
+.caja-contenidos {
+    width: 80%;
+}
+
+.caja-contenidos .videoTrailer {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+
+}
+
+.caja-contenidos .videoTrailer iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+.caja-contenidos .resumenPelicula {
+    grid-area: resumen;
+    margin: 20px 0;
+}
+
+
+
+.caja-contenidos .resumenPelicula h2 {
+    font-size: 20px;
+    padding-top: 5px;
+    margin-left: 30px;
+
+}
+
+.caja-contenidos .resumenPelicula p {
+    margin-top: 1rem;
+    text-indent: 20px;
+}
+
+
 
 
 /* -----------formulario nosotros----------- */
@@ -996,10 +1102,6 @@ footer p {
     .select select {
         height: 60%;
     }
-
-
-
-
 
 }
 
@@ -1116,7 +1218,8 @@ footer p {
         justify-content: center;
         background-color: var(--fondo);
         width: 100%;
-        margin: 0;
+        margin: 10px 0;
+        height: 80px;
 
     }
 
@@ -1128,10 +1231,11 @@ footer p {
         justify-content: space-between;
         align-items: center;
         position: initial;
-        gap: 5em;
         background-color: var(--fondo);
         padding: 0px;
         box-shadow: none;
+        gap: 5rem;
+        margin: 0px 30px;
     }
 
     .nav-list {
@@ -1146,8 +1250,9 @@ footer p {
     .nav-list li a {
         text-decoration: none;
         color: var(--texto);
-        padding: 10px 20px;
+        padding: 10px;
         text-transform: uppercase;
+
 
     }
 
@@ -1287,7 +1392,7 @@ footer p {
     .estrenos,
     .cartelera {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         justify-items: center;
         align-items: center;
         margin: 0 50px;
@@ -1335,5 +1440,36 @@ footer p {
         font-size: 1.2rem;
         font-weight: 700;
     }
+
+    /*detalles pelicula*/
+    .caja-detalles {
+
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        grid-template-areas:
+            "tituloPelicula tituloPelicula"
+            "detalles resumen"
+            "trailer trailer";
+        justify-items: center;
+        align-items: start;
+        gap: 20px;
+    }
+
+    .caja-contenidos .resumenPelicula .difuminado {
+        width: 300px;
+    }
+
+    .caja-contenidos .videoTrailer {
+        position: relative;
+        padding-bottom: 56.25%;
+        /* 16:9 aspect ratio (divide 9 by 16 = 0.5625) */
+        height: 0;
+        overflow: hidden;
+
+        max-width: 1200px;
+    }
+
+
+
 
 }

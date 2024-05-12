@@ -2,7 +2,7 @@ let header = `<button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></
 <nav class="nav" id="nav">
   <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i></button>
   <div class="navLogo">
-    <a href="index.html"><img class="logo" src="img/logoCine.png" alt="logo cine" /></a>
+    <a href="index.html"><img class="logo" src="img/LogoCine.jpeg" alt="logo cine" /></a>
     <h1>Codo Cinema</h1>
   </div>
   <ul class="nav-list">
