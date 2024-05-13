@@ -17,6 +17,7 @@ body {
     background-color: var(--fondo);
     font-family: "montserrat", sans-serif;
     color: var(--texto);
+
 }
 
 .abrir-menu,
@@ -873,6 +874,16 @@ footer p {
     margin: 0px auto;
 }
 
+.imagenfondo {
+    opacity: 0.2;
+    max-height: 95%;
+    height: auto;
+    width: 100%;
+    background: linear-gradient();
+    position: absolute;
+    z-index: -1;
+}
+
 .caja-detalles .peliculaTitulo {
     grid-area: tituloPelicula;
     display: flex;
@@ -936,6 +947,7 @@ footer p {
     height: 500px;
     justify-content: center;
     border-radius: 10px;
+    border: 2px solid var(--botones-color);
 }
 
 .tablaDetalles ul {
