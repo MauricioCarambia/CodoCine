@@ -56,6 +56,7 @@ function validarFormulario() {
 
   return isValid;
 }
+
 function validarRegistro() {
   var nombre = document.getElementById("nombre").value;
   var apellido = document.getElementById("apellido").value;
