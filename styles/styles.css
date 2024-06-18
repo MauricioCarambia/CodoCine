@@ -184,6 +184,7 @@ nav {
     margin: 20px auto;
     font-size: 1.2rem;
     font-weight: 700;
+    text-align: center;
 }
 
 .formulario .login:hover {
@@ -1053,6 +1054,21 @@ footer p {
     color: var(--botones-color);
 }
 
+.admin {
+    text-align: center;
+    margin: 20px;
+}
+
+.lista-admin {
+    text-decoration: none;
+
+}
+
+.admin a {
+    color: var(--texto);
+    list-style-type: none;
+    padding: 20px 0;
+}
 
 @media only screen and (min-width: 768px) {
 
