@@ -88,6 +88,7 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    grid-area: logo;
 }
 
 .logo {
@@ -184,7 +185,6 @@ nav {
     width: 40%;
     margin: 20px auto;
     font-size: 1.2rem;
-    font-weight: 700;
     text-align: center;
 }
 
@@ -435,9 +435,10 @@ footer {
 
 .footer-principal {
     display: grid;
-    grid-template-areas: "preguntas"
+    grid-template-areas: "logo"
+        "preguntas"
         "redes"
-        "p ";
+        "p";
     align-items: center;
     text-align: center;
     padding-bottom: 40px;
@@ -480,6 +481,10 @@ footer {
     filter: invert(100%);
     padding: 0 10px;
     text-decoration: none;
+}
+
+.redes img {
+    width: 30px;
 }
 
 .redes img:hover {
@@ -608,7 +613,6 @@ footer p {
     border-radius: 10px;
     font-size: 0.7rem;
     text-transform: uppercase;
-    font-weight: 600;
 }
 
 .btncomprar:hover {
@@ -658,7 +662,6 @@ footer p {
     color: var(--texto);
     border: none;
     width: 200px;
-    font-weight: 700;
     text-transform: uppercase;
     margin: 20px 0;
 
@@ -1074,7 +1077,8 @@ footer p {
     /*****************footer**************/
 
     .footer-principal {
-        grid-template-areas: "preguntas redes"
+        grid-template-areas: "logo logo"
+            "preguntas redes"
             "p p";
         font-size: 1.3rem;
 
@@ -1185,8 +1189,8 @@ footer p {
 
 
     .footer-principal {
-        grid-template-areas: "preguntas redes"
-            "p p";
+        grid-template-areas: "logo preguntas redes"
+            "p p p";
         font-size: 1.5rem;
     }
 
@@ -1349,8 +1353,8 @@ footer p {
 
     .footer-principal {
         font-size: 1rem;
-        grid-template-areas: "preguntas redes"
-            "p p";
+        grid-template-areas: "logo preguntas redes"
+            "p p p";
 
     }
 
