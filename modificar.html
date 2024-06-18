@@ -14,8 +14,15 @@
   </head>
   <body>
     <header></header>
-    <main> <section class="contacto">
-        <h3>Modificar pelicula</h3>
+    <main> <section class="busqueda">
+      <h2 class="difuminado">Modificar pelicula</h2>
+      <form class="form-busqueda" action="#">
+        <label class="form-label" for="search">Pelicula a modificar</label>
+        <input class="form-input" type="text" name="search" id="search" placeholder="Buscar película..." />
+        <input class="form-input btnbuscar" type="button" value="Buscar" />
+      </form>
+    </section><section class="contacto">
+        
         <div class="contact_form">
           <form action="#" method="#" id="formulario" onsubmit="return validarFormulario()" class="formulario">
             <label for="nombre" class="formulario-label">Nombre </label>
@@ -34,7 +41,7 @@
             <input class="formulario-input" type="text" name="apta" id="apta" placeholder="Apta todo publico? si/no" />
 
             <input class="formulario-input login" type="submit" value="Modificar"></input>
-            <a class="formulario-input login" href="admin.html">Vovler</a>
+            <a class="formulario-input login" href="admin.html">Volver</a>
           
           </form>
         </div>

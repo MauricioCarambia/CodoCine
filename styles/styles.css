@@ -149,6 +149,7 @@ nav {
     display: flex;
     flex-direction: column;
     padding: 30px 0;
+    list-style-type: none;
 }
 
 .formulario .formulario-label {
@@ -1054,21 +1055,12 @@ footer p {
     color: var(--botones-color);
 }
 
-.admin {
-    text-align: center;
-    margin: 20px;
-}
-
-.lista-admin {
+.list-admin {
+    list-style: none;
     text-decoration: none;
-
 }
 
-.admin a {
-    color: var(--texto);
-    list-style-type: none;
-    padding: 20px 0;
-}
+
 
 @media only screen and (min-width: 768px) {
 
