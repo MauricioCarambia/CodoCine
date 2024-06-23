@@ -176,12 +176,29 @@ nav {
 
 }
 
+.formulario .volver {
+    background-color: var(--fondo);
+    border-radius: 10px;
+    border-color: var(--botones-color);
+    border: 2px solid var(--botones-color);
+    text-transform: uppercase;
+    color: var(--texto);
+    width: 40%;
+    margin: 20px auto;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.formulario .volver:hover {
+    background-color: var(--botones-color);
+    border: 2px solid var(--botones-color);
+}
+
 .formulario .login {
     background-color: var(--botones-color);
     border-radius: 10px;
     text-transform: uppercase;
     color: var(--texto);
-    margin-top: 20px;
     width: 40%;
     margin: 20px auto;
     font-size: 1.2rem;
@@ -199,9 +216,9 @@ nav {
 
 }
 
-.formulario a:hover {
+/* .formulario a:hover {
     border-bottom: 2px solid var(--botones-color);
-}
+} */
 
 .registrarse h2 {
     padding-bottom: 30px;
