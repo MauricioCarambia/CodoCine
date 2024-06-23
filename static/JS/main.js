@@ -40,7 +40,7 @@ function mostrarInfo() {
     case "Film 1":
       titulo.textContent = "Forrest Gump";
       info.style.display = "grid";
-      portadaImg.src = "/img/forest.jpg";
+      portadaImg.src = "/static/imagenes/forest.jpg";
       infoGen.textContent = "Comedia, Drama, Romántico";
       infoDur.textContent = "2h 20min";
       infoDir.textContent = "Robert Zemeckis";
@@ -50,7 +50,7 @@ function mostrarInfo() {
       break;
     case "Film 2":
       info.style.display = "grid";
-      portadaImg.src = "/img/gladiador.jpg";
+      portadaImg.src = "/static/imagenes/gladiador.jpg";
       titulo.textContent = "Gladiador";
       infoGen.textContent = "Acción, Aventura, Histórico";
       infoDur.textContent = "2h 35min";
@@ -62,7 +62,7 @@ function mostrarInfo() {
     case "Film 3":
       info.style.display = "grid";
       titulo.textContent = "Rápido Y Furioso";
-      portadaImg.src = "/img/rapido.webp";
+      portadaImg.src = "/static/imagenes/rapido.webp";
       infoGen.textContent = "Acción, Crimen";
       infoDur.textContent = "1h 47min";
       infoDir.textContent = "Rob Cohen";
