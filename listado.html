@@ -23,7 +23,7 @@
       <div>
         <!-- <h1>Listado de peliculas del Inventario</h1><br> -->
 
-        <table> <!-- Se crea una tabla para mostrar los peliculas. -->
+        <table class="tabla"> <!-- Se crea una tabla para mostrar los peliculas. -->
           <thead> <!--Encabezado de la tabla con columnas para código, descripción, cantidad, precio y acciones.-->
             <tr>
               <th>Código</th>
@@ -35,7 +35,7 @@
 
             </tr>
           </thead>
-          <tbody id="tablaPeliculas"> </tbody>
+          <tbody id="tablaPeliculas" > </tbody>
         </table><br>
 
         <div class="formulario">
@@ -46,11 +46,7 @@
     // const URL = "http://127.0.0.1:5000/"
     const URL = "https://sinost.pythonanywhere.com/"
 
-    // Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
-    //const URL = "https://USUARIO.pythonanywhere.com/"
-
-
-    // Realizamos la solicitud GET al servidor para obtener todos los peliculas.
+      // Realizamos la solicitud GET al servidor para obtener todos los peliculas.
     fetch(URL + 'pelicula')
       .then(function (response) {
         if (response.ok) {
@@ -68,12 +64,12 @@
 
         // Iteramos sobre cada pelicula y agregamos filas a la tabla
         for (let pelicula of data) {
-          let fila = document.createElement('tr'); //Crea una nueva fila de tabla (<tr>) para cada pelicula.
-          fila.innerHTML = '<td>' + pelicula.codigo + '</td>' +
+          let fila = document.createElement('tr' ); //Crea una nueva fila de tabla (<tr>) para cada pelicula.
+          fila.innerHTML = '<td class="elementos">' + pelicula.codigo + '</td>' +
             '<td>' + pelicula.nombre + '</td>' +
-            '<td align="right">' + pelicula.genero + '</td>' +
-            '<td align="right">' + pelicula.duracion + '</td>' +
-          '<td><img src=https://www.pythonanywhere.com/user/Sinost/files/home/Sinost/mysite/static/imagenes/' + pelicula.imagen_url +' alt="Imagen de la pelicula" style="width: 100px;"></td>' + '<td align="right">' + pelicula.atp + '</td>';
+            '<td>' + pelicula.genero + '</td>' +
+            '<td>' + pelicula.duracion + '</td>' +
+          '<td><img src=https://www.pythonanywhere.com/user/Sinost/files/home/Sinost/mysite/static/imagenes/'+ pelicula.imagen_url +' alt="Imagen de la pelicula" style="width: 100px;"></td>' + '<td>' + pelicula.atp + '</td>';
           //Una vez que se crea la fila con el contenido del pelicula, se agrega a la tabla utilizando el método appendChild del elemento tablaPeliculas.
           tablaPeliculas.appendChild(fila);
         }
