@@ -1,91 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista Peliculas</title>
+    <link rel="stylesheet" href="./static/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lista Peliculas</title>
-  <link rel="stylesheet" href="./static/css/styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-</head>
+  <body>
+    <header>
+      <nav class="navbar-index">
+        <img class="logo-nav" src="./static/imagenes/logos-nav.webp" alt="logo agencia de aprendizaje" />
+      </nav>
+    </header>
 
-<body>
-  <header>
-    <h1>Bienvenido Administrador!</h1>
-  </header>
-  <main class="contacto">
-         <h2 class="difuminado">Listado peliculas</h2>
-      <div>
-        <!-- <h1>Listado de peliculas del Inventario</h1><br> -->
+    <div class="logo-centrado">
+      <img src="./static/imagenes/logo_Codo.jpg" alt="logo" />
+    </div>
+    <h1>Agregar Productos al Inventario</h1>
+    <br />
 
-        <table> <!-- Se crea una tabla para mostrar los peliculas. -->
-          <thead> <!--Encabezado de la tabla con columnas para código, descripción, cantidad, precio y acciones.-->
-            <tr>
-              <th>Código</th>
-              <th>Nombre</th>
-              <th>Genero</th>
-              <th>Duracion</th>
-              <th>Imagen</th>
-              <th>ATP</th>
+    <!--enctype="multipart/form-data" es necesario para enviar archivos al back.-->
+    <form id="formulario" enctype="multipart/form-data">
+      <label for="nombre">Descripción:</label>
+      <input type="text" id="nombre" name="nombre" required /><br />
 
-            </tr>
-          </thead>
-          <tbody id="tablaPeliculas"> </tbody>
-        </table><br>
+      <label for="genero">Cantidad:</label>
+      <input type="number" id="genero" name="genero" required /><br />
 
-        <div class="formulario">
-          <a class="formulario-input volver" href="admin.html">Volver</a>
-        </div>
-  </main>
-  <script>
-    // const URL = "http://127.0.0.1:5000/"
-    const URL = "http://sinost.pythonanywhere.com/";
+      <label for="duracion">Precio:</label>
+      <input type="number" step="0.01" id="duracion" name="duracion" required /><br />
 
-    // Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
-    //const URL = "https://USUARIO.pythonanywhere.com/"
+      <label for="imagenP">Imagen del producto:</label>
+      <input type="file" id="imagen" name="imagen" />
 
+      <br /><br />
+      <label for="atp">Proveedor:</label>
+      <input type="text" id="atp" name="atp" />
 
-    // Realizamos la solicitud GET al servidor para obtener todos los peliculas.
-    fetch(URL + 'pelicula')
-      .then(function (response) {
-        if (response.ok) {
-          //Si la respuesta es exitosa (response.ok), convierte el cuerpo de la respuesta de formato JSON a un objeto JavaScript y pasa estos datos a la siguiente promesa then.
-          return response.json();
-        } else {
-          // Si hubo un error, lanzar explícitamente una excepción para ser "catcheada" más adelante
-          throw new Error('Error al obtener las peliculas.');
-        }
-      })
+      <button type="submit">Agregar Producto</button>
+      <a href="index.html">Menu principal</a>
+    </form>
 
-      //Esta función maneja los datos convertidos del JSON.
-      .then(function (data) {
-        let tablaPeliculas = document.getElementById('tablaPeliculas'); //Selecciona el elemento del DOM donde se mostrarán los peliculas.
+    <script>
+      // const URL = "http://127.0.0.1:5000/"
+      const URL = "http://sinost.pythonanywhere.com/";
 
-        // Iteramos sobre cada pelicula y agregamos filas a la tabla
-        for (let pelicula of data) {
-          let fila = document.createElement('tr'); //Crea una nueva fila de tabla (<tr>) para cada pelicula.
-          fila.innerHTML = '<td>' + pelicula.codigo + '</td>' +
-            '<td>' + pelicula.nombre + '</td>' +
-            '<td align="right">' + pelicula.genero + '</td>' +
-            '<td align="right">' + pelicula.duracion + '</td>' +
-          '<td><img src=https://www.pythonanywhere.com/user/Sinost/files/home/Sinost/mysite/static/imagenes' + pelicula.imagen_url +' alt="Imagen del producto" style="width: 100px;"></td>' + '<td align="right">' + pelicula.atp + '</td>';
+      //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
+      //const URL = "https://USUARIO.pythonanywhere.com/"
 
-          //Una vez que se crea la fila con el contenido del pelicula, se agrega a la tabla utilizando el método appendChild del elemento tablaPeliculas.
-          tablaPeliculas.appendChild(fila);
-        }
-      })
+      // Capturamos el evento de envío del formulario
+      document.getElementById("formulario").addEventListener("submit", function (event) {
+        event.preventDefault(); // Evitamos que se envie el form
 
-      //Captura y maneja errores, mostrando una alerta en caso de error al obtener los peliculas.
-      .catch(function (error) {
-        // Código para manejar errores
-        alert('Error al obtener los peliculas.');
+        var formData = new FormData(this);
+
+        // Realizamos la solicitud POST al servidor
+        fetch(URL + "pelicula", {
+          method: "POST",
+          body: formData, // Aquí enviamos formData. Dado que formData puede contener archivos, no se utiliza JSON.
+        })
+          //Después de realizar la solicitud POST, se utiliza el método then() para manejar la respuesta del servidor.
+          .then(function (response) {
+            if (response.ok) {
+              //Si la respuesta es exitosa, convierte los datos de la respuesta a formato JSON.
+              return response.json();
+            } else {
+              // Si hubo un error, lanzar explícitamente una excepción
+              // para ser "catcheada" más adelante
+              throw new Error("Error al agregar el producto.");
+            }
+          })
+
+          //Respuesta OK, muestra una alerta informando que el producto se agregó correctamente y limpia los campos del formulario para que puedan ser utilizados para un nuevo producto.
+          .then(function (data) {
+            alert("Producto agregado correctamente.");
+          })
+
+          // En caso de error, mostramos una alerta con un mensaje de error.
+          .catch(function (error) {
+            alert("Error al agregar el producto.");
+          })
+
+          // Limpiar el formulario en ambos casos (éxito o error)
+          .finally(function () {
+            document.getElementById("nombre").value = "";
+            document.getElementById("genero").value = "";
+            document.getElementById("duracion").value = "";
+            document.getElementById("imagen").value = "";
+            document.getElementById("atp").value = "";
+          });
       });
-  </script>
-  <script src="static/JS/main.js"></script>
-</body>
-
+    </script>
+  </body>
 </html>
