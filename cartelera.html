@@ -23,7 +23,7 @@
           <input class="form-input btnbuscar" type="button" value="Filtrar" />
         </form>
       </section>
-      <div class="cartelera" id="cartelera-main">
+      <div class="cartelera" id="peliculas-container">
         <figure class="cartelera-figure">
           <a href="detallePelicula2.html">
             <img src="static/imagenes/jurassicparkcard.jpg" alt="Jurassic park" />
@@ -45,7 +45,7 @@
             <p>Accion | 180min</p></a
           >
         </figure>
-        <figure class="cartelera-figure">
+        <!-- <figure class="cartelera-figure">
           <a href="#">
             <img src="static/imagenes/padrinocard.jpeg" alt="el padrino" />
             <figcaption>El padrino</figcaption>
@@ -191,12 +191,50 @@
             <figcaption>Toy Story</figcaption>
             <p>Accion | 180min</p></a
           >
-        </figure>
+        </figure> -->
       </div>
     </main>
 
     <footer id="idFooter"></footer>
+    <script>
+      // URL base de la API
+      const URL = "http://sinost.pythonanywhere.com/";
 
+      // Realizamos la solicitud GET al servidor para obtener todas las películas.
+      fetch(URL + "pelicula")
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error("Error al obtener las películas.");
+          }
+        })
+        .then((data) => {
+          let container = document.getElementById("peliculas-container");
+
+          // Iteramos sobre cada película y generamos un elemento <figure> dinámicamente
+          for (let pelicula of data) {
+            let figure = document.createElement("figure");
+            figure.className = "cartelera-figure";
+
+            figure.innerHTML = `
+              <a href="#">
+                <img src="https://www.pythonanywhere.com/user/Sinost/files/home/Sinost/mysite/static/imagenes/${pelicula.imagen_url}" />
+                <figcaption>Nombre: ${pelicula.nombre}</figcaption>
+                <p>Genero: ${pelicula.genero}
+                <p>Duracion: ${pelicula.duracion}min</p>
+              </a>
+            `;
+
+            // Añadimos la nueva figura al contenedor
+            container.appendChild(figure);
+          }
+        })
+        .catch((error) => {
+          alert("Error al obtener las películas.");
+          console.error("Error:", error);
+        });
+    </script>
     <script src="static/JS/footer.js"></script>
     <script src="static/JS/header.js"></script>
     <script src="static/JS/main.js"></script>
