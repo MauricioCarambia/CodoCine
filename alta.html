@@ -13,89 +13,82 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   </head>
   <body>
-    <header>
-      <nav class="navbar-index">
-        <img class="logo-nav" src="./static/imagenes/logos-nav.webp" alt="logo agencia de aprendizaje" />
-      </nav>
-    </header>
+    <main class="contacto">
+        <h2 class="difuminado">Agregar pelicula</h2>
+        <div class="contact_form">
+          <form enctype="multipart/form-data" id="formulario" onsubmit="return validarFormulario()" class="formulario">
+            <label for="nombre" class="formulario-label">Nombre </label>
+            <input class="formulario-input" type="text" name="nombre" id="nombre" placeholder="Nombre pelicula" />
 
-    <div class="logo-centrado">
-      <img src="./static/imagenes/logo_Codo.jpg" alt="logo" />
-    </div>
-    <h1>Agregar Productos al Inventario</h1>
-    <br />
+            <label for="genero" class="formulario-label">Genero </label>
+            <input class="formulario-input" type="text" name="genero" id="genero" placeholder="Genero pelicula" />
 
-    <!--enctype="multipart/form-data" es necesario para enviar archivos al back.-->
-    <form id="formulario" enctype="multipart/form-data">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" required /><br />
+            <label for="duracion" class="formulario-label">Duracion </label>
+            <input class="formulario-input" type="number" name="duracion" id="duracion" placeholder="Duracion pelicula" />
 
-      <label for="genero">Genero:</label>
-      <input type="text" id="genero" name="genero" required /><br />
+            <label for="imagen" class="formulario-label">Imagen </label>
+            <input class="formulario-input" type="file" name="imagen" id="imagen" placeholder="Suba la foto" />
 
-      <label for="duracion">Duracion:</label>
-      <input type="number" step="0.01" id="duracion" name="duracion" required /><br />
+            <label for="atp" class="formulario-label">Apta publico </label>
+            <input class="formulario-input" type="text" name="atp" id="atp" placeholder="Apta todo publico? si/no" />
 
-      <label for="imagenP">Imagen del producto:</label>
-      <input type="file" id="imagen" name="imagen" />
-
-      <br /><br />
-      <label for="atp">Apta todo publico:</label>
-      <input type="text" id="atp" name="atp" />
-
-      <button type="submit">Agregar Producto</button>
-      <a href="index.html">Menu principal</a>
-    </form>
-
+            <input class="formulario-input login" type="submit" value="Agregar"></input>
+            <a class="formulario-input volver" href="admin.html">Volver</a>
+          </form>
+        </div>
+    </main>
     <script>
       // const URL = "http://127.0.0.1:5000/"
       const URL = "http://sinost.pythonanywhere.com/";
 
       //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
       //const URL = "https://USUARIO.pythonanywhere.com/"
+      
 
       // Capturamos el evento de envío del formulario
-      document.getElementById("formulario").addEventListener("submit", function (event) {
-        event.preventDefault(); // Evitamos que se envie el form
+      document.getElementById('formulario').addEventListener('submit', function (event) {
+          event.preventDefault(); // Evitamos que se envie el form 
 
-        var formData = new FormData(this);
+          var formData = new FormData(this);
+  
+          // Realizamos la solicitud POST al servidor
+          fetch(URL + 'pelicula', {
+              method: 'POST',
+              body: formData // Aquí enviamos formData. Dado que formData puede contener archivos, no se utiliza JSON.
+          })
 
-        // Realizamos la solicitud POST al servidor
-        fetch(URL + "pelicula", {
-          method: "POST",
-          body: formData, // Aquí enviamos formData. Dado que formData puede contener archivos, no se utiliza JSON.
-        })
           //Después de realizar la solicitud POST, se utiliza el método then() para manejar la respuesta del servidor.
           .then(function (response) {
-            if (response.ok) {
-              //Si la respuesta es exitosa, convierte los datos de la respuesta a formato JSON.
-              return response.json();
-            } else {
-              // Si hubo un error, lanzar explícitamente una excepción
-              // para ser "catcheada" más adelante
-              throw new Error("Error al agregar el producto.");
-            }
+                  if (response.ok) { 
+                      //Si la respuesta es exitosa, convierte los datos de la respuesta a formato JSON.
+                      return response.json(); 
+                  } else {
+                      // Si hubo un error, lanzar explícitamente una excepción
+                      // para ser "catcheada" más adelante
+                      throw new Error('Error al agregar la pelicula.');
+                  }
           })
 
-          //Respuesta OK, muestra una alerta informando que el producto se agregó correctamente y limpia los campos del formulario para que puedan ser utilizados para un nuevo producto.
-          .then(function (data) {
-            alert("Producto agregado correctamente.");
-          })
+              //Respuesta OK, muestra una alerta informando que el producto se agregó correctamente y limpia los campos del formulario para que puedan ser utilizados para un nuevo producto.
+              .then(function (data) {
+                  alert('Pelicula agregada correctamente.');
+              })
 
-          // En caso de error, mostramos una alerta con un mensaje de error.
-          .catch(function (error) {
-            alert("Error al agregar el producto.");
-          })
+              // En caso de error, mostramos una alerta con un mensaje de error.
+              .catch(function (error) {
+                  alert('Error al agregar la pelicula.');
+              })
 
-          // Limpiar el formulario en ambos casos (éxito o error)
-          .finally(function () {
-            document.getElementById("nombre").value = "";
-            document.getElementById("genero").value = "";
-            document.getElementById("duracion").value = "";
-            document.getElementById("imagen").value = "";
-            document.getElementById("atp").value = "";
-          });
-      });
-    </script>
+              // Limpiar el formulario en ambos casos (éxito o error)
+              .finally(function () {
+                  document.getElementById('nombre').value = "";
+                  document.getElementById('genero').value = "";
+                  document.getElementById('duracion').value = "";
+                  document.getElementById('imagen').value = "";
+                  document.getElementById('atp').value = "";
+              });
+      })
+  </script>
+    <script src="static/JS/main.js"></script>
   </body>
 </html>
