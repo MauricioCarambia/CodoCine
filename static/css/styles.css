@@ -161,8 +161,7 @@ nav {
 }
 
 .formulario .formulario-input {
-    width: 100%;
-    padding: 8px 0;
+    padding: 10px 30px;
     border: none;
     background-color: var(--fondo);
     border-bottom: 1px solid var(--botones-color);
@@ -183,7 +182,6 @@ nav {
     border: 2px solid var(--botones-color);
     text-transform: uppercase;
     color: var(--texto);
-    width: 40%;
     margin: 20px auto;
     font-size: 1.2rem;
     text-align: center;
@@ -195,11 +193,12 @@ nav {
 }
 
 .formulario .login {
+
+    padding: 10px 30px;
     background-color: var(--botones-color);
     border-radius: 10px;
     text-transform: uppercase;
     color: var(--texto);
-    width: 40%;
     margin: 20px auto;
     font-size: 1.2rem;
     text-align: center;
@@ -670,6 +669,11 @@ footer p {
 
 }
 
+.form-busqueda a {
+    text-decoration: none;
+
+}
+
 
 .form-busqueda .form-input.btnbuscar {
     padding: 10px 20px;
@@ -680,8 +684,8 @@ footer p {
     border: none;
     width: 200px;
     text-transform: uppercase;
-    margin: 20px 0;
-
+    margin: 20px 10px;
+    text-align: center;
 }
 
 .form-busqueda .form-input.btnbuscar:hover {
@@ -720,17 +724,23 @@ footer p {
 .cartelera a {
     text-decoration: none;
     color: var(--texto);
+
+}
+
+.cartelera-figure {
+    margin-bottom: 30px;
 }
 
 .cartelera-figure figcaption,
 .estrenos-figure figcaption {
-    text-align: center;
+    text-align: left;
+    margin-left: 30px;
 }
 
 .cartelera p,
 .estrenos-figure p {
-    text-align: center;
-    margin-bottom: 40px;
+    text-align: left;
+    margin-left: 30px;
 }
 
 .promos {

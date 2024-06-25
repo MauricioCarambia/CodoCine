@@ -42,7 +42,7 @@ class Catalogo:
             codigo INT AUTO_INCREMENT PRIMARY KEY,
             nombre VARCHAR(255) NOT NULL,
             genero VARCHAR(255) NOT NULL,
-            duracion DECIMAL(10, 2) NOT NULL,
+            duracion int NOT NULL,
             imagen_url VARCHAR(255),
             atp VARCHAR(255))''')
         self.conn.commit()

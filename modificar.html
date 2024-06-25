@@ -16,15 +16,16 @@
     <header><h1>Bienvenido Administrador!</h1></header>
     <main> <section class="busqueda">
       <h2 class="difuminado">Modificar pelicula</h2>
-      <form class="form-busqueda" action="#">
+      <form class="form-busqueda" id="form-obtener-producto" action="#">
         <label class="form-label" for="search">Pelicula a modificar</label>
-        <input class="form-input" type="text" name="search" id="search" placeholder="Buscar película..." />
-        <input class="form-input btnbuscar" type="button" value="Buscar" />
+        <input class="form-input" type="text" name="search" id="codigo" placeholder="Buscar película..." />
+        <input class="form-input btnbuscar" type="submit" value="Buscar" />
+        <a class="form-input btnbuscar" href="admin.html">Volver</a>
       </form>
-    </section><section class="contacto">
-        
-        <div class="contact_form">
-          <form action="#" method="#" id="formulario" onsubmit="return validarFormulario()" class="formulario">
+    </section>
+    <section class="contacto">
+        <div class="contact_form" id="datos-producto" style="display: none;">
+          <form action="#" method="#" id="form-guardar-cambios" onsubmit="return validarFormulario()" class="formulario">
             <label for="nombre" class="formulario-label">Nombre </label>
             <input class="formulario-input" type="text" name="nombre" id="nombre" placeholder="Nombre pelicula" />
 
@@ -34,20 +35,172 @@
             <label for="duracion" class="formulario-label">Duracion </label>
             <input class="formulario-input" type="text" name="duracion" id="duracion" placeholder="Duracion pelicula" />
 
-            <label for="imagen" class="formulario-label">Imagen </label>
-            <input class="formulario-input" type="file" name="imagen" id="imagen" placeholder="Suba la foto" />
+            <!-- Imagen actual del producto - Debe comentarse al subirse al servidor-->
+            <img id="imagen-actual" style="max-width: 200px; display: none;">               
+            <!-- Vista previa de la nueva imagen seleccionada -->
+            <img id="imagen-vista-previa" style="max-width: 200px; display: none;">
 
-            <label for="apta" class="formulario-label">Apta publico </label>
-            <input class="formulario-input" type="text" name="apta" id="apta" placeholder="Apta todo publico? si/no" />
+            <label for="nuevaImagen" class="formulario-label">Imagen </label>
+            <input class="formulario-input" type="file" name="nuevaImagen" id="nuevaImagen" placeholder="Suba la foto" />
+
+            <label for="atp" class="formulario-label">Apta publico </label>
+            <input class="formulario-input" type="text" name="atp" id="atp" placeholder="Apta todo publico? si/no" />
 
             <input class="formulario-input login" type="submit" value="Modificar"></input>
             <a class="formulario-input volver" href="admin.html">Volver</a>
-          
           </form>
         </div>
-      </section></main>
+    </section>
+      </main>
+      <script>
+        // const URL = "http://127.0.0.1:5000/"
+         const URL = "https://sinost.pythonanywhere.com/"
 
-    <footer></footer>
-    <script src="static/JS/main.js"></script>
+
+        // Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
+        //const URL = "https://USUARIO.pythonanywhere.com/"
+
+        // Variables de estado para controlar la visibilidad y los datos del formulario
+        let codigo = '';
+        let nombre = '';
+        let genero = '';
+        let duracion = '';
+        let atp = '';
+        let imagen_url = '';
+        let imagenSeleccionada = null;
+        let imagenUrlTemp = null;
+        let mostrarDatosProducto = false;
+
+        document.getElementById('form-obtener-producto').addEventListener('submit', obtenerProducto);
+        document.getElementById('form-guardar-cambios').addEventListener('submit', guardarCambios);
+        document.getElementById('nuevaImagen').addEventListener('change', seleccionarImagen);
+
+        // Se ejecuta cuando se envía el formulario de consulta. Realiza una solicitud GET a la API y obtiene los datos del producto correspondiente al código ingresado.
+        function obtenerProducto(event) {
+            event.preventDefault();
+            codigo = document.getElementById('codigo').value;
+            fetch(URL + 'pelicula/' + codigo)
+                .then(response => {
+                    if (response.ok) {
+                        return response.json()
+                    } else {
+                        throw new Error('Error al obtener los datos de la pelicula.')
+                    }
+                })
+                .then(data => {
+                    nombre = data.nombre;
+                    genero = data.genero;
+                    duracion = data.duracion;
+                    atp = data.atp;
+                    imagen_url = data.imagen_url;
+                    mostrarDatosProducto = true; //Activa la vista del segundo formulario
+                    mostrarFormulario();
+                })
+                .catch(error => {
+                    alert('Código no encontrado.');
+                });
+        }
+
+        // Muestra el formulario con los datos del producto
+        function mostrarFormulario() {
+            if (mostrarDatosProducto) {
+                document.getElementById('nombre').value = nombre;
+                document.getElementById('genero').value = genero;
+                document.getElementById('duracion').value = duracion;
+                document.getElementById('atp').value = atp;
+
+                const imagenActual = document.getElementById('imagen-actual');
+                if (imagen_url && !imagenSeleccionada) { // Verifica si imagen_url no está vacía y no se ha seleccionado una imagen
+                    
+                    imagenActual.src = 'https://www.pythonanywhere.com/user/Sinost/files/home/Sinost/mysite/static/imagenes/' + imagen_url;                    
+			//Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
+                    //imagenActual.src = 'https://www.pythonanywhere.com/user/USUARIO/files/home/USUARIO/mysite/static/imagenes/' + imagen_url;
+                    imagenActual.style.display = 'block'; // Muestra la imagen actual
+                } else {
+                    imagenActual.style.display = 'none'; // Oculta la imagen si no hay URL
+                }
+
+                document.getElementById('datos-producto').style.display = 'block';
+            } else {
+                document.getElementById('datos-producto').style.display = 'none';
+            }
+        }
+
+        // Se activa cuando el usuario selecciona una imagen para cargar.
+        function seleccionarImagen(event) {
+            const file = event.target.files[0];
+            imagenSeleccionada = file;
+            imagenUrlTemp = URL.createObjectURL(file); // Crea una URL temporal para la vista previa
+
+            const imagenVistaPrevia = document.getElementById('imagen-vista-previa');
+            imagenVistaPrevia.src = imagenUrlTemp;
+            imagenVistaPrevia.style.display = 'block';
+        }
+
+        // Se usa para enviar los datos modificados del producto al servidor.
+        function guardarCambios(event) {
+            event.preventDefault();
+
+            const formData = new FormData();
+            formData.append('codigo', codigo);
+            formData.append('nombre', document.getElementById('nombre').value);
+            formData.append('genero', document.getElementById('genero').value);
+            formData.append('atp', document.getElementById('atp').value);
+            formData.append('duracion', document.getElementById('duracion').value);
+
+            // Si se ha seleccionado una imagen nueva, la añade al formData. 
+            if (imagenSeleccionada) {
+                formData.append('nuevaImagen', imagenSeleccionada, imagenSeleccionada.name);
+            }
+
+            fetch(URL + 'pelicula/' + codigo, {
+                method: 'PUT',
+                body: formData,
+            })
+                .then(response => {
+                    if (response.ok) {
+                        return response.json()
+                    } else {
+                        throw new Error('Error al guardar los cambios de la pelicula.')
+                    }
+                })
+                .then(data => {
+                    alert('Pelicula actualizada correctamente.');
+                    limpiarFormulario();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error al actualizar la pelicula.');
+                });
+        }
+
+        // Restablece todas las variables relacionadas con el formulario a sus valores iniciales, lo que efectivamente "limpia" el formulario.
+        function limpiarFormulario() {
+            document.getElementById('codigo').value = '';
+            document.getElementById('nombre').value = '';
+            document.getElementById('genero').value = '';
+            document.getElementById('duracion').value = '';
+            document.getElementById('atp').value = '';
+            document.getElementById('nuevaImagen').value = '';
+
+            const imagenActual = document.getElementById('imagen-actual');
+            imagenActual.style.display = 'none';
+
+            const imagenVistaPrevia = document.getElementById('imagen-vista-previa');
+            imagenVistaPrevia.style.display = 'none';
+
+            codigo = '';
+            nombre = '';
+            genero = '';
+            duracion = '';
+            atp = '';
+            imagen_url = '';
+            imagenSeleccionada = null;
+            imagenUrlTemp = null;
+            mostrarDatosProducto = false;
+
+            document.getElementById('datos-producto').style.display = 'none';
+        }
+    </script>
   </body>
 </html>
