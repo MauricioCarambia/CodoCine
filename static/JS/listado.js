@@ -24,6 +24,7 @@ fetch(URL + "pelicula")
             <figcaption>Nombre: ${pelicula.nombre}</figcaption>
             <p>Genero: ${pelicula.genero}</p>
             <p>Duracion: ${pelicula.duracion}min</p>
+            <p>ATP: ${pelicula.atp}</p>
             
         </a>
         `;
