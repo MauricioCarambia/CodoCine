@@ -19,7 +19,7 @@ fetch(URL + "pelicula")
       figure.className = "cartelera-figure";
 
       figure.innerHTML = `
-        <a href="http://127.0.0.1:5500/${pelicula.url}.html">
+        <a href="#">
             <img src=https://www.pythonanywhere.com/user/Sinost/files/home/Sinost/mysite/static/imagenes/${pelicula.imagen_url} />
             <figcaption>Nombre: ${pelicula.nombre}</figcaption>
             <p>Genero: ${pelicula.genero}</p>
