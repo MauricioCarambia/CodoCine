@@ -21,7 +21,6 @@ function obtenerProductos() {
                      <td class="elementos">${pelicula.nombre}</td>
                      <td class="elementos">${pelicula.genero}</td>
                      <td class="elementos">${pelicula.duracion}</td>
-                     <td><img src="https://sinost.pythonanywhere.com/static/imagenes/${pelicula.imagen_url}" alt="Imagen de la pelicula" style="width: 100px;"></td>
                      <td class="elementos formulario"><button class="formulario-input volver" onclick="eliminarProducto('${pelicula.codigo}')">Eliminar</button></td>
                  `;
       });
