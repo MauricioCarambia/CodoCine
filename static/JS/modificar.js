@@ -99,7 +99,7 @@ function guardarCambios(event) {
 
   // Si se ha seleccionado una imagen nueva, la añade al formData.
   if (imagenSeleccionada) {
-    formData.append("nuevaImagen", imagenSeleccionada, imagenSeleccionada.name);
+    formData.append("imagen", imagenSeleccionada, imagenSeleccionada.name);
   }
 
   fetch(URL + "pelicula/" + codigo, {
