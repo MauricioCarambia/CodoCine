@@ -11,7 +11,7 @@ fetch(URL + "pelicula")
     }
   })
   .then((data) => {
-    let container = document.getElementById("peliculas-container");
+    let container = document.getElementById("tablaPeliculas");
 
     // Iteramos sobre cada película y generamos un elemento <figure> dinámicamente
     for (let pelicula of data) {
