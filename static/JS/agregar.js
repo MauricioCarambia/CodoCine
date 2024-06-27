@@ -43,5 +43,6 @@ document.getElementById("formulario").addEventListener("submit", function (event
       document.getElementById("duracion").value = "";
       document.getElementById("imagen").value = "";
       document.getElementById("atp").value = "";
+      document.getElementById("url").value = "";
     });
 });

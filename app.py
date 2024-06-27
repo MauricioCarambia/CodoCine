@@ -44,7 +44,8 @@ class Catalogo:
             genero VARCHAR(255) NOT NULL,
             duracion int NOT NULL,
             imagen_url VARCHAR(255),
-            atp VARCHAR(255))''')
+            atp VARCHAR(255),
+            url VARCHAR(255))''')
         self.conn.commit()
 
         # Cerrar el cursor inicial y abrir uno nuevo con el parámetro dictionary=True
@@ -61,31 +62,16 @@ class Catalogo:
         self.cursor.execute(f"SELECT * FROM pelicula WHERE codigo = {codigo}")
         return self.cursor.fetchone()
 
-    def mostrar_producto(self, codigo):
-        # Mostramos los datos de un producto a partir de su código
-        pelicula = self.consultar_pelicula(codigo)
-        if pelicula:
-            print("-" * 40)
-            print(f"Código.....: {pelicula['codigo']}")
-            print(f"Nommbre: {pelicula['nombre']}")
-            print(f"Genero...: {pelicula['genero']}")
-            print(f"Duracion.....: {pelicula['duracion']}")
-            print(f"Imagen.....: {pelicula['imagen_url']}")
-            print(f"ATP..: {pelicula['atp']}")
-            print("-" * 40)
-        else:
-            print("pelicula no encontrado.")
-
-    def agregar_pelicula(self, nombre, genero, duracion, imagen, atp):
-        sql = "INSERT INTO pelicula (nombre, genero, duracion, imagen_url, atp) VALUES (%s, %s, %s, %s, %s)"
-        valores = (nombre, genero, duracion, imagen, atp)
+    def agregar_pelicula(self, nombre, genero, duracion, imagen, atp, url):
+        sql = "INSERT INTO pelicula (nombre, genero, duracion, imagen_url, atp, url) VALUES (%s, %s, %s, %s, %s, %s)"
+        valores = (nombre, genero, duracion, imagen, atp, url)
         self.cursor.execute(sql,valores)
         self.conn.commit()
         return self.cursor.lastrowid
 
-    def modificar_pelicula(self, codigo, nueva_nombre, nueva_genero, nuevo_duracion, nueva_imagen, nuevo_atp):
-        sql = "UPDATE pelicula SET nombre = %s, genero = %s, duracion = %s, imagen_url = %s, atp = %s WHERE codigo = %s"
-        valores = (nueva_nombre, nueva_genero, nuevo_duracion, nueva_imagen, nuevo_atp, codigo)
+    def modificar_pelicula(self, codigo, nueva_nombre, nueva_genero, nuevo_duracion, nueva_imagen, nuevo_atp, nuevo_url):
+        sql = "UPDATE pelicula SET nombre = %s, genero = %s, duracion = %s, imagen_url = %s, atp = %s, url = %s WHERE codigo = %s"
+        valores = (nueva_nombre, nueva_genero, nuevo_duracion, nueva_imagen, nuevo_atp, nuevo_url, codigo)
         self.cursor.execute(sql, valores)
         self.conn.commit()
         return self.cursor.rowcount > 0
@@ -126,7 +112,8 @@ def agregar_pelicula():
     genero = request.form['genero']
     duracion = request.form['duracion']
     imagen = request.files['imagen']
-    atp = request.form['atp']  
+    atp = request.form['atp']
+    url = request.form['url']
     nombre_imagen = ""
 
     # Genero el nombre de la imagen
@@ -134,7 +121,7 @@ def agregar_pelicula():
     nombre_base, extension = os.path.splitext(nombre_imagen) 
     nombre_imagen = f"{nombre_base}_{int(time.time())}{extension}" 
 
-    nuevo_codigo = catalogo.agregar_pelicula(nombre, genero, duracion, nombre_imagen, atp)
+    nuevo_codigo = catalogo.agregar_pelicula(nombre, genero, duracion, nombre_imagen, atp, url)
     if nuevo_codigo:    
         imagen.save(os.path.join(ruta_destino, nombre_imagen))
         return jsonify({"mensaje": "Pelicula agregada correctamente.", "codigo": nuevo_codigo, "imagen": nombre_imagen}), 201
@@ -148,6 +135,7 @@ def modificar_pelicula(codigo):
     nueva_genero = request.form.get("genero")
     nuevo_duracion = request.form.get("duracion")
     nuevo_atp = request.form.get("atp")
+    nuevo_url = request.form.get("url")
     
     # Verifica si se proporcionó una nueva imagen
     if 'imagen' in request.files:
@@ -176,7 +164,7 @@ def modificar_pelicula(codigo):
             nombre_imagen = pelicula["imagen_url"]
 
 # Se llama al método modificar_producto pasando el codigo del producto y los nuevos datos.
-    if catalogo.modificar_pelicula(codigo, nueva_nombre, nueva_genero, nuevo_duracion, nombre_imagen, nuevo_atp):
+    if catalogo.modificar_pelicula(codigo, nueva_nombre, nueva_genero, nuevo_duracion, nombre_imagen, nuevo_atp, nuevo_url):
         return jsonify({"mensaje": "pelicula modificada"}), 200
     else:
         return jsonify({"mensaje": "pelicula no encontrada"}), 403
