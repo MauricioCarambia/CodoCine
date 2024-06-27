@@ -10,7 +10,7 @@ let nombre = "";
 let genero = "";
 let duracion = "";
 let atp = "";
-let url = "";
+let detalle = "";
 let imagen_url = "";
 let imagenSeleccionada = null;
 let imagenUrlTemp = null;
@@ -37,7 +37,7 @@ function obtenerProducto(event) {
       genero = data.genero;
       duracion = data.duracion;
       atp = data.atp;
-      url = data.url;
+      detalle = data.detalle;
       imagen_url = data.imagen_url;
       mostrarDatosProducto = true; //Activa la vista del segundo formulario
       mostrarFormulario();
@@ -54,7 +54,7 @@ function mostrarFormulario() {
     document.getElementById("genero").value = genero;
     document.getElementById("duracion").value = duracion;
     document.getElementById("atp").value = atp;
-    document.getElementById("url").value = url;
+    document.getElementById("detalle").value = detalle;
 
     const imagenActual = document.getElementById("imagen-actual");
     if (imagen_url && !imagenSeleccionada) {
@@ -95,7 +95,7 @@ function guardarCambios(event) {
   formData.append("genero", document.getElementById("genero").value);
   formData.append("atp", document.getElementById("atp").value);
   formData.append("duracion", document.getElementById("duracion").value);
-  formData.append("url", document.getElementById("url").value);
+  formData.append("detalle", document.getElementById("detalle").value);
 
   // Si se ha seleccionado una imagen nueva, la añade al formData.
   if (imagenSeleccionada) {
@@ -131,7 +131,7 @@ function limpiarFormulario() {
   document.getElementById("duracion").value = "";
   document.getElementById("atp").value = "";
   document.getElementById("nuevaImagen").value = "";
-  document.getElementById("url").value = "";
+  document.getElementById("detalle").value = "";
 
   const imagenActual = document.getElementById("imagen-actual");
   imagenActual.style.display = "none";
@@ -144,7 +144,7 @@ function limpiarFormulario() {
   genero = "";
   duracion = "";
   atp = "";
-  url = "";
+  detalle = "";
   imagen_url = "";
   imagenSeleccionada = null;
   imagenUrlTemp = null;
