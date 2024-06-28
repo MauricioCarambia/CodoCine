@@ -33,7 +33,18 @@ fetch(URL + "pelicula")
       container.appendChild(figure);
     }
   })
-  .catch((error) => {
-    alert("Error al obtener las películas.");
-    console.error("Error:", error);
+  .catch(function (error) {
+    // Código para manejar errores
+    console.error("Error al obtener las películas:", error);
+
+    // Obtener el elemento por su ID y mostrar el mensaje de error
+    let mensajeErrorElemento = document.getElementById("mensajeError");
+
+    if (mensajeErrorElemento) {
+      mensajeErrorElemento.textContent = "No se pudieron cargar las películas.";
+      mensajeErrorElemento.style.color = "red"; // Opcional: estilo para el mensaje de error
+      mensajeErrorElemento.style.textAlign = "center"; // Opcional: estilo para el mensaje de error
+    } else {
+      console.error("Elemento con id 'mensajeError' no encontrado en el DOM.");
+    }
   });

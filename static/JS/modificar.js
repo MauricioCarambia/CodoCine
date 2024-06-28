@@ -43,7 +43,13 @@ function obtenerProducto(event) {
       mostrarFormulario();
     })
     .catch((error) => {
-      alert("Código no encontrado.");
+      let mensajeErrorElemento = document.getElementById("mensajeError");
+
+      if (mensajeErrorElemento) {
+        mensajeErrorElemento.textContent = "No se encontro la pelicula";
+        mensajeErrorElemento.style.color = "red"; // Opcional: estilo para el mensaje de error
+        mensajeErrorElemento.style.textAlign = "center"; // Opcional: estilo para el mensaje de error
+      }
     });
 }
 
@@ -114,12 +120,28 @@ function guardarCambios(event) {
       }
     })
     .then((data) => {
-      alert("Pelicula actualizada correctamente.");
+      let mensajeErrorElemento = document.getElementById("mensajeError");
+      if (mensajeErrorElemento) {
+        mensajeErrorElemento.textContent = "Pelicula modificada";
+        mensajeErrorElemento.style.color = "red"; // Opcional: estilo para el mensaje de error
+        mensajeErrorElemento.style.textAlign = "center"; // Opcional: estilo para el mensaje de error
+      }
       limpiarFormulario();
     })
-    .catch((error) => {
-      console.error("Error:", error);
-      alert("Error al actualizar la pelicula.");
+    .catch(function (error) {
+      // Código para manejar errores
+      console.error("Error al obtener las películas:", error);
+
+      // Obtener el elemento por su ID y mostrar el mensaje de error
+      let mensajeErrorElemento = document.getElementById("mensajeError");
+
+      if (mensajeErrorElemento) {
+        mensajeErrorElemento.textContent = "No se pudo modificar la pelicula";
+        mensajeErrorElemento.style.color = "red"; // Opcional: estilo para el mensaje de error
+        mensajeErrorElemento.style.textAlign = "center"; // Opcional: estilo para el mensaje de error
+      } else {
+        console.error("Elemento con id 'mensajeError' no encontrado en el DOM.");
+      }
     });
 }
 

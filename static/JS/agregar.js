@@ -28,12 +28,30 @@ document.getElementById("formulario").addEventListener("submit", function (event
 
     //Respuesta OK, muestra una alerta informando que el producto se agregó correctamente y limpia los campos del formulario para que puedan ser utilizados para un nuevo producto.
     .then(function (data) {
-      alert("Pelicula agregada correctamente.");
+      let mensajeErrorElemento = document.getElementById("mensajeError");
+
+      if (mensajeErrorElemento) {
+        mensajeErrorElemento.textContent = "Pelicula agregada";
+        mensajeErrorElemento.style.color = "red"; // Opcional: estilo para el mensaje de error
+        mensajeErrorElemento.style.textAlign = "center"; // Opcional: estilo para el mensaje de error
+      }
     })
 
     // En caso de error, mostramos una alerta con un mensaje de error.
     .catch(function (error) {
-      alert("Error al agregar la pelicula.");
+      // Código para manejar errores
+      console.error("Error al obtener las películas:", error);
+
+      // Obtener el elemento por su ID y mostrar el mensaje de error
+      let mensajeErrorElemento = document.getElementById("mensajeError");
+
+      if (mensajeErrorElemento) {
+        mensajeErrorElemento.textContent = "No se pudo agregar la pelicula";
+        mensajeErrorElemento.style.color = "red"; // Opcional: estilo para el mensaje de error
+        mensajeErrorElemento.style.textAlign = "center"; // Opcional: estilo para el mensaje de error
+      } else {
+        console.error("Elemento con id 'mensajeError' no encontrado en el DOM.");
+      }
     })
 
     // Limpiar el formulario en ambos casos (éxito o error)

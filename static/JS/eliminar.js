@@ -28,7 +28,13 @@ function obtenerProductos() {
     // Captura y maneja errores, mostrando una alerta en caso de error al obtener los productos.
     .catch((error) => {
       console.log("Error:", error);
-      alert("Error al obtener los productos.");
+      let mensajeErrorElemento = document.getElementById("mensajeError");
+
+      if (mensajeErrorElemento) {
+        mensajeErrorElemento.textContent = "No se pudieron cargar las películas.";
+        mensajeErrorElemento.style.color = "red"; // Opcional: estilo para el mensaje de error
+        mensajeErrorElemento.style.textAlign = "center"; // Opcional: estilo para el mensaje de error
+      }
     });
 }
 
@@ -41,12 +47,30 @@ function eliminarProducto(codigo) {
         if (response.ok) {
           // Si es exitosa (response.ok), elimina el producto y da mensaje de ok.
           obtenerProductos(); // Vuelve a obtener la lista de productos para actualizar la tabla.
-          alert("Pelicula eliminada correctamente.");
+          let mensajeErrorElemento = document.getElementById("mensajeError");
+
+          if (mensajeErrorElemento) {
+            mensajeErrorElemento.textContent = "Pelicula eliminada";
+            mensajeErrorElemento.style.color = "red"; // Opcional: estilo para el mensaje de error
+            mensajeErrorElemento.style.textAlign = "center"; // Opcional: estilo para el mensaje de error
+          }
         }
       })
       // En caso de error, mostramos una alerta con un mensaje de error.
-      .catch((error) => {
-        alert(error.message);
+      .catch(function (error) {
+        // Código para manejar errores
+        console.error("Error al obtener las películas:", error);
+
+        // Obtener el elemento por su ID y mostrar el mensaje de error
+        let mensajeErrorElemento = document.getElementById("mensajeError");
+
+        if (mensajeErrorElemento) {
+          mensajeErrorElemento.textContent = "No se pudo eliminar la pelicula";
+          mensajeErrorElemento.style.color = "red"; // Opcional: estilo para el mensaje de error
+          mensajeErrorElemento.style.textAlign = "center"; // Opcional: estilo para el mensaje de error
+        } else {
+          console.error("Elemento con id 'mensajeError' no encontrado en el DOM.");
+        }
       });
   }
 }
