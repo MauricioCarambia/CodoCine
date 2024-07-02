@@ -9,7 +9,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
   // Validar si el correo y la contraseña son correctos
   if (email === "admin@gmail.com" && password === "admin") {
     // Redirigir a la página admin.html
-    window.location.href = "admin.html";
+    window.location.href = "admin_menu.html";
   } else {
     // Mostrar el mensaje de error si los datos son incorrectos
     var errorMessage = document.getElementById("error-message");
