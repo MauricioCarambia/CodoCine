@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modificar Peliculas</title>
+    <link rel="stylesheet" href="./static/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  </head>
+  <body>
+    <header><h1>Bienvenido Administrador!</h1></header>
+    <main> <section class="busqueda">
+      <h2 class="difuminado">Modificar usuario</h2>
+      <h2 id="mensajeError"></h2>
+      <form class="form-busqueda" id="form-obtener-usuario" action="#">
+        <label class="form-label" for="search">Usuario a modificar</label>
+        <input class="form-input" type="text" name="search" id="codigo" placeholder="Buscar usuario..." />
+        <input class="form-input btnbuscar" type="submit" value="Buscar" />
+        <a class="form-input btnbuscar" href="admin_usuario.html">Volver</a>
+      </form>
+    </section>
+    <section class="contacto">
+        <div class="contact_form" id="datos-producto" style="display: none;">
+          <form action="#" method="#" id="form-guardar-cambios" onsubmit="return validarModificacionUser()" class="formulario">
+            <label for="nombreModificar" class="formulario-label">Nombre </label>
+            <p id="errorNombre"></p>
+            <input class="formulario-input" type="text" name="nombre" id="nombreModificar" placeholder="Nombre usuario" />
+
+            <label for="apellidoModificar" class="formulario-label">Apellido </label>
+            <p id="errorApellido"></p>
+            <input class="formulario-input" type="text" name="apellido" id="apellidoModificar" placeholder="Apellido usuario" />
+
+            <label for="emailModificar" class="formulario-label">Genero </label>
+            <p id="errorEmail"></p>
+            <input class="formulario-input" type="text" name="email" id="emailModificar" placeholder="Email usuario" />
+
+            <label for="passModificar" class="formulario-label">Contraseña </label>
+            <p id="errorPass"></p>
+            <input class="formulario-input" type="text" name="pass" id="passModificar" placeholder="Contraseña usuario" />
+
+            <label for="celularModificar" class="formulario-label">Celular </label>
+            <p id="errorCelular"></p>
+            <input class="formulario-input" type="text" name="celular" id="celularModificar" placeholder="Celular usuario" />
+
+            <label class="formulario-label" for="generoModificar">Genero</label>
+            <p id="errorGenero"></p>
+            <select class="formulario-input" name="genero" id="generoModificar">
+              <option value="">Selecciona una opcion</option>
+              <option value="Masculino">Masculino</option>
+              <option value="Femenino">Femenino</option>
+              <option value="Otro">Otro</option>
+              <option value="Noindica">Prefiero no indicar</option>
+            </select>
+            <label for="fecnacModificar" class="formulario-label">Fecha de nacimiento </label>
+            <p id="errorNac"></p>
+            <input class="formulario-input" type="date" name="fecnac" id="fecnacModificar" placeholder="Fecha de nacimiento usuario" />
+
+            <input class="formulario-input login" type="submit" value="Modificar"></input>
+            <a class="formulario-input volver" href="admin_usuario.html">Volver</a>
+          </form>
+        </div>
+    </section>
+      </main>
+      <script src="static/JS/validacion.js">  </script>
+      <script src="static/JS/modificar_usuario.js">  </script>
+      <script src="static/JS/formato_fecha.js">  </script>
+
+
+  </body>
+</html>

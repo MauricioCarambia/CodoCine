@@ -17,7 +17,7 @@
     <main>
       <h2 class="difuminado">Crear nuevo usuario</h2>
       <section class="registrar">
-        <form action="#" method="#" id="formulario" onsubmit="return validarRegistro()" class="formulario">
+        <form id="formulario_user" onsubmit="return validarRegistro()" class="formulario" method="POST">
           <label class="formulario-label" for="nombre">Nombre</label>
           <p id="errorNombre"></p>
           <input class="formulario-input" type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre" />
@@ -49,7 +49,7 @@
             <option value="masculino">Masculino</option>
             <option value="femenino">Femenino</option>
             <option value="otro">Otro</option>
-            <option value="noindica">Prefieron no indicar</option>
+            <option value="Noindica">Prefiero no indicar</option>
           </select>
 
           <label class="formulario-label" for="fecnac">Fecha de Nacimiento</label>
@@ -59,7 +59,7 @@
           <label for="prom">
             <input type="checkbox" name="prom" id="prom" />¿Desea recibir emails con promociones y estrenos?</label
           >
-          <button class="formulario-input login" type="submit" id="enviar">Enviar</button>
+          <button class="formulario-input login" type="submit" id="enviar" style="cursor: pointer;">Enviar</button>
         </form>
       </section>
     </main>
@@ -69,5 +69,6 @@
     <script src="static/JS/header.js"></script>
     <script src="static/JS/validacion.js"></script>
     <script src="static/JS/main.js"></script>
+    <script src="static/JS/registro.js"></script>
   </body>
 </html>
